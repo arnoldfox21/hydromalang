@@ -16,13 +16,13 @@ export default function PurificationProcess() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <span className="text-xs sm:text-sm font-bold tracking-widest text-sky-600 uppercase bg-sky-50 px-3 py-1.5 rounded-full border border-sky-100">
-            Kemurnian Terjamin
+            Standar Mutu &amp; Kemurnian
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Dari Mata Air Pegunungan Malang Menuju Meja Anda
+            Kemurnian Air Mineral Pilihan untuk Keluarga Anda
           </h2>
           <p className="text-base text-slate-600 leading-relaxed">
-            Diproses melalui perpaduan keajaiban alam dan teknologi filtrasi berstandar industri tinggi. Kami mengeliminasi seluruh bakteri tanpa membuang kandungan mineral alaminya.
+            Diproses melalui teknologi filtrasi modern dan nano filter berstandar industri tinggi. Kami menjamin setiap galon air yang Anda terima higienis, segar, dan 100% bersegel resmi.
           </p>
         </div>
 
@@ -64,10 +64,10 @@ export default function PurificationProcess() {
 
             <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
               <p>
-                Kawasan Malang Raya diberkahi oleh gugusan pegunungan yang menjulang tinggi, menghadirkan air pegunungan dengan komposisi mineral terlengkap dan rasa yang tidak pahit di tenggorokan.
+                Menjaga hidrasi harian dengan air minum berkualitas adalah investasi terbaik untuk kesehatan keluarga. Air mineral bermerek resmi seperti Cleo diproses dengan standar pabrikasi ketat dan bebas bromat.
               </p>
               <p>
-                Hydro Malang berkomitmen untuk mempertahankan keaslian anugerah alam ini. Setiap tetes yang Anda minum adalah perpaduan hidrasi sejati yang menyehatkan organ tubuh, menyegarkan pikiran, dan menjaga daya tahan tubuh aktif.
+                Hydro Malang hadir untuk mempermudah warga Perumahan Graha Merjosari Asri mendapatkan pasokan air minum berkualitas dengan layanan pesan antar kilat dan 100% bebas ongkos kirim.
               </p>
             </div>
           </div>

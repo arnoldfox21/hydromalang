@@ -15,21 +15,21 @@ export default function Hero() {
             {/* Tagline Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-semibold tracking-wide shadow-xs">
               <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Air Mineral Murni • Antar Kilat Merjosari, Lowokwaru Malang</span>
+              <span>Air Mineral Populer Resmi • Gratis Ongkir Graha Merjosari Asri</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-              Kemurnian Sejati,{" "}
+              Air Mineral Populer,{" "}
               <span className="bg-linear-to-r from-sky-600 via-cyan-500 to-teal-500 bg-clip-text text-transparent">
                 Kesegaran Alami
               </span>{" "}
-              untuk Hidup Sehat
+              Diantar Cepat ke Rumah
             </h1>
 
             {/* Sub-headline description */}
             <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Hydro Malang menyajikan air mineral murni langsung dari sumber mata air alami pegunungan Malang. Diproses higienis dengan teknologi filtrasi modern, ozonisasi ganda, serta mempertahankan mineral esensial seimbang untuk kebugaran tubuh setiap hari.
+              Hydro Malang menyediakan pilihan air minum mineral bermerek populer dan terpercaya seperti <strong>Cleo, Club, dan lainnya</strong>. Saat ini stok yang tersedia khusus <strong>Cleo</strong> dengan jaminan 100% original bersegel pabrik. Pengantaran kilat <strong>100% Gratis Ongkir khusus Perumahan Graha Merjosari Asri</strong>.
             </p>
 
             {/* Quick feature highlights */}
@@ -37,24 +37,24 @@ export default function Hero() {
               <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/70 border border-sky-100 shadow-2xs">
                 <div className="w-8 h-8 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center shrink-0">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-slate-900">pH Seimbang</div>
-                  <div className="text-[11px] text-slate-500">7.4+ Alami Tubuh</div>
+                  <div className="text-xs font-bold text-slate-900">Brand Resmi</div>
+                  <div className="text-[11px] text-slate-500">Ready: Cleo Segel Asli</div>
                 </div>
               </div>
 
               <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/70 border border-sky-100 shadow-2xs">
                 <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-slate-900">SNI & BPOM</div>
-                  <div className="text-[11px] text-slate-500">Higienis & Halal</div>
+                  <div className="text-xs font-bold text-slate-900">Kemurnian Teruji</div>
+                  <div className="text-[11px] text-slate-500">Bebas Bromat &amp; Higienis</div>
                 </div>
               </div>
 
@@ -65,32 +65,44 @@ export default function Hero() {
                   </svg>
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-slate-900">Merjosari</div>
+                  <div className="text-xs font-bold text-slate-900">Graha Merjosari Asri</div>
                   <div className="text-[11px] text-emerald-600 font-bold">100% Gratis Ongkir</div>
                 </div>
               </div>
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-4">
               <a
                 href="#order-section"
-                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-linear-to-r from-sky-600 to-cyan-500 text-white font-bold text-base shadow-lg shadow-sky-500/25 hover:from-sky-500 hover:to-cyan-400 hover:shadow-xl hover:shadow-sky-500/35 transition-all text-center flex items-center justify-center gap-2.5 transform hover:-translate-y-0.5"
+                className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-linear-to-r from-sky-600 to-cyan-500 text-white font-bold text-sm sm:text-base shadow-lg shadow-sky-500/25 hover:from-sky-500 hover:to-cyan-400 hover:shadow-xl transition-all text-center flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
               >
-                <span>Pesan Galon Sekarang</span>
+                <span>Pesan Cleo Sekarang</span>
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </a>
 
               <a
-                href="#kalkulator"
-                className="w-full sm:w-auto px-7 py-4 rounded-xl bg-white border border-sky-200 text-slate-700 hover:text-sky-600 hover:border-sky-300 hover:bg-sky-50/50 font-bold text-base shadow-xs transition-all text-center flex items-center justify-center gap-2"
+                href="https://shopee.co.id/hydromalang"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm sm:text-base shadow-lg shadow-orange-500/25 transition-all text-center flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
+              >
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M19.78 7.37l-1.92-3.84C17.5 2.82 16.77 2.37 16 2.37H8c-.77 0-1.5.45-1.86 1.16L4.22 7.37c-.6.93-.34 2.16.59 2.76.3.2.66.3 1.02.3h.17l.8 9.57C6.88 20.89 7.6 21.63 8.5 21.63h7c.9 0 1.62-.74 1.7-1.63l.8-9.57h.17c.36 0 .72-.1 1.02-.3.93-.6 1.19-1.83.59-2.76z" />
+                </svg>
+                <span>Order via Shopee</span>
+              </a>
+
+              <a
+                href="#produk"
+                className="w-full sm:w-auto px-5 py-3.5 rounded-xl bg-white border border-sky-200 text-slate-700 hover:text-sky-600 hover:border-sky-300 hover:bg-sky-50/50 font-bold text-sm sm:text-base shadow-xs transition-all text-center flex items-center justify-center gap-2"
               >
                 <svg className="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
                 </svg>
-                <span>Hitung Kebutuhan Air</span>
+                <span>Lihat Produk</span>
               </a>
             </div>
 
@@ -99,7 +111,7 @@ export default function Hero() {
               <svg className="w-4 h-4 text-emerald-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span>Pengantaran kilat 100% Gratis Ongkir khusus wilayah Merjosari (Area lain segera hadir)</span>
+              <span>100% Bebas Ongkir khusus Graha Merjosari Asri • Wilayah lain di Malang bisa order lewat Shopee</span>
             </p>
           </div>
 
@@ -119,41 +131,32 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Main Product Gallon Image with floating effect */}
-              <div className="relative z-10 w-64 sm:w-72 h-[380px] sm:h-[420px] transition-transform duration-500 hover:scale-105 animate-float">
+              {/* Gallon Product SVG layer */}
+              <div className="relative z-10 w-72 sm:w-80 h-72 sm:h-80 drop-shadow-2xl transition-transform duration-500 hover:scale-105">
                 <Image
                   src="/images/product-gallon.svg"
-                  alt="Hydro Malang Galon 19 Liter"
+                  alt="Galon Air Mineral Populer Hydro Malang"
                   fill
-                  className="object-contain drop-shadow-2xl"
+                  className="object-contain"
                   priority
                 />
               </div>
 
-              {/* Floating Badge 1: Segel Higienis */}
-              <div className="absolute -top-2 -left-4 sm:left-2 z-20 bg-white/95 backdrop-blur-md p-3 rounded-2xl shadow-xl border border-sky-100 flex items-center gap-3 animate-pulse-glow">
-                <div className="w-10 h-10 rounded-xl bg-linear-to-tr from-sky-500 to-cyan-400 text-white flex items-center justify-center shadow-md shadow-sky-500/20">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+              {/* Floating Quality Badge */}
+              <div className="absolute bottom-6 left-4 z-20 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl border border-sky-100 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                  Cleo
                 </div>
                 <div>
-                  <div className="text-xs font-extrabold text-slate-800">Segel Hologram</div>
-                  <div className="text-[11px] text-sky-600 font-semibold">100% Terlindung &amp; Murni</div>
+                  <div className="text-xs font-bold text-slate-900">Stok Ready: Cleo</div>
+                  <div className="text-[11px] text-emerald-600 font-semibold">100% Asli Bersegel Resmi</div>
                 </div>
               </div>
 
-              {/* Floating Badge 2: TDS Rendah Alami */}
-              <div className="absolute -bottom-4 right-0 sm:right-2 z-20 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-sky-100 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-linear-to-tr from-emerald-500 to-teal-400 text-white flex items-center justify-center shadow-md shadow-emerald-500/20">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-xs font-extrabold text-slate-800">TDS Ideal &lt; 90 ppm</div>
-                  <div className="text-[11px] text-slate-500 font-medium">Rasa Lembut &amp; Menyegarkan</div>
-                </div>
+              {/* Floating Free Ongkir Badge */}
+              <div className="absolute top-6 right-4 z-20 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-2xl shadow-xl border border-emerald-100 flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+                <span className="text-xs font-black text-emerald-700">GRATIS ONGKIR GRAHA MERJOSARI ASRI</span>
               </div>
             </div>
           </div>

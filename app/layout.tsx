@@ -3,16 +3,16 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hydromalang.com"),
-  title: "Hydro Malang - Kesegaran Murni Pegunungan untuk Hidup Sehat",
+  title: "Hydro Malang - Air Minum Mineral Populer & Antar Cepat Graha Merjosari Asri",
   description:
-    "Hydro Malang menghadirkan air mineral murni berkualitas tinggi dari mata air alami pegunungan Malang. Higienis, kaya mineral esensial, dan siap antar cepat se-Malang Raya.",
+    "Hydro Malang menyediakan air minum mineral bermerek populer seperti Cleo, Club, dan lainnya. Siap antar kilat 100% gratis ongkir khusus Perumahan Graha Merjosari Asri, Malang.",
   keywords: [
     "Hydro Malang",
-    "air mineral Malang",
-    "pesan galon Malang",
-    "air minum pegunungan Malang",
-    "air mineral higienis Malang",
-    "distributor air minum Malang Raya",
+    "air mineral Cleo Malang",
+    "pesan galon Graha Merjosari Asri",
+    "air mineral Merjosari Malang",
+    "galon Cleo Malang",
+    "gratis ongkir Graha Merjosari Asri",
   ],
   icons: {
     icon: "/logo.png",

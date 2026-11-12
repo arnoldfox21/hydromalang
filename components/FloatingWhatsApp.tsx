@@ -32,7 +32,7 @@ export default function FloatingWhatsApp() {
 
       {/* WhatsApp Button */}
       <a
-        href="https://wa.me/62895702831600?text=Halo%20Hydro%20Malang,%20saya%20ingin%20pesan%20air%20mineral."
+        href="https://wa.me/62895702831600?text=Halo%20Hydro%20Malang,%20saya%20warga%20Graha%20Merjosari%20Asri%20ingin%20pesan%20air%20mineral%20Cleo."
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Pesan Hydro Malang lewat WhatsApp"

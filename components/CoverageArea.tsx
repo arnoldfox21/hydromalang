@@ -1,41 +1,43 @@
 import Image from "next/image";
 
+const SHOPEE_URL = "https://shopee.co.id/hydromalang";
+
 export default function CoverageArea() {
   const activeRegion = {
-    name: "Wilayah Merjosari (Aktif)",
+    name: "Perumahan Graha Merjosari Asri (Aktif)",
     subAreas: [
-      "Perumahan Joyo Grand",
-      "Jl. Joyo Suryo & Joyo Mulyo",
-      "Jl. Joyo Utomo & Joyo Pranoto",
-      "Jl. Joyo Tambaksari & Joyo Raharjo",
-      "Villa Bukit Tidar & Dinoyo Asri",
-      "Area Kos & Rumah Warga Sekitar Merjosari",
+      "Blok A — Graha Merjosari Asri",
+      "Blok B — Graha Merjosari Asri",
+      "Blok C — Graha Merjosari Asri",
+      "Blok D — Graha Merjosari Asri",
+      "Blok E & Area Sekitar Perumahan",
+      "Seluruh Hunian Warga Graha Merjosari Asri",
     ],
-    estimate: "15 - 30 Menit",
+    estimate: "10 - 20 Menit",
     status: "TERSEDIA SEKARANG",
     badge: "100% GRATIS ONGKIR",
   };
 
-  const upcomingRegions = [
+  const shopeeRegions = [
     {
-      name: "Lowokwaru Lain & Suhat",
-      note: "Dinoyo, Jatimulyo, Tulusrejo, Tunggulwulung",
-      status: "Segera Hadir",
+      name: "Area Merjosari Lainnya",
+      note: "Joyo Grand, Bukit Tidar, Dinoyo Asri, Joyo Utomo & sekitarnya",
+      status: "Bisa via Shopee",
     },
     {
-      name: "Klojen & Malang Kota",
-      note: "Oro-oro Dowo, Kauman, Rampal, Klojen Pusat",
-      status: "Segera Hadir",
+      name: "Lowokwaru & Tlogomas",
+      note: "Dinoyo, Tlogomas, Jatimulyo, Tunggulwulung",
+      status: "Bisa via Shopee",
     },
     {
-      name: "Blimbing & Kedungkandang",
-      note: "Arjosari, Pandanwangi, Sawojajar, Buring",
-      status: "Segera Hadir",
+      name: "Suhat & Klojen",
+      note: "Jl. Soekarno Hatta, Oro-oro Dowo, Kauman, Rampal",
+      status: "Bisa via Shopee",
     },
     {
-      name: "Sukun, Batu & Kab. Malang",
-      note: "Bandungrejosari, Karangploso, Dau, Singosari",
-      status: "Segera Hadir",
+      name: "Blimbing, Sukun & Seluruh Malang",
+      note: "Sawojajar, Arjosari, Pandanwangi, Kebonsari",
+      status: "Bisa via Shopee",
     },
   ];
 
@@ -47,19 +49,20 @@ export default function CoverageArea() {
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-bold tracking-wide">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Khusus Wilayah Merjosari — 100% Gratis Ongkir</span>
+              <span>Gratis Ongkir Khusus Graha Merjosari Asri • Area Lain via Shopee</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              Layanan Pesan Antar Kilat Saat Ini Khusus{" "}
-              <span className="text-sky-600">Wilayah Merjosari</span>
+              Pesan Antar Langsung Khusus{" "}
+              <span className="text-sky-600">Graha Merjosari Asri</span>,{" "}
+              Luar Area Tersedia di <span className="text-orange-600">Shopee</span>
             </h2>
 
             <p className="text-base text-slate-600 leading-relaxed">
-              Untuk menjaga kecepatan dan kualitas layanan terbaik, saat ini pengantaran Hydro Malang <strong>difokuskan khusus wilayah Kelurahan Merjosari dan sekitarnya dengan GRATIS ONGKIR</strong> langsung sampai ke depan pintu kos, rumah, atau kantor Anda.
+              Pengantaran kurir langsung dengan <strong>100% GRATIS ONGKIR</strong> dikhususkan untuk warga Perumahan Graha Merjosari Asri. Namun bagi Anda yang berada di wilayah lain di Malang, seluruh produk Cleo dapat dipesan dengan mudah melalui <strong>Shopee Official Store</strong> kami.
             </p>
 
-            {/* Active Region Highlight Card */}
+            {/* Active Region Highlight Card (Graha Merjosari Asri) */}
             <div className="p-6 sm:p-7 rounded-3xl bg-linear-to-br from-emerald-500 to-teal-600 text-white shadow-xl shadow-emerald-500/15 relative overflow-hidden">
               <div className="absolute top-0 right-0 translate-x-8 -translate-y-8 w-40 h-40 bg-white/10 rounded-full blur-2xl pointer-events-none" />
 
@@ -77,7 +80,7 @@ export default function CoverageArea() {
               </div>
 
               <p className="text-xs sm:text-sm text-emerald-50 mb-4 leading-relaxed">
-                Jangkauan aktif meliputi seluruh penjuru perumahan, perkampungan, dan kos-kosan di Merjosari:
+                Jangkauan aktif kurir langsung meliputi seluruh blok perumahan Graha Merjosari Asri:
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm">
@@ -93,40 +96,52 @@ export default function CoverageArea() {
 
               <div className="mt-5 pt-4 border-t border-white/20 flex flex-wrap items-center justify-between text-xs text-emerald-100 gap-2">
                 <div>⚡ Estimasi Pengantaran: <strong className="text-white font-bold">{activeRegion.estimate}</strong></div>
-                <div>📦 Tanpa Minimum Order Galon</div>
+                <div>📦 Bebas Minimum Order Galon</div>
               </div>
             </div>
 
-            {/* Disabled / Upcoming Regions Grid */}
+            {/* Shopee Regions Grid */}
             <div className="space-y-3 pt-2">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-                  Wilayah Lain di Luar Merjosari (Belum Tersedia)
+                <span className="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-orange-500" />
+                  <span>Wilayah Lainnya (Bisa Pesan via Shopee)</span>
                 </span>
-                <span className="text-[11px] font-semibold text-slate-400 bg-slate-200/70 px-2 py-0.5 rounded-md">
-                  Tahap Persiapan
-                </span>
+                <a
+                  href={SHOPEE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-bold text-orange-600 hover:text-orange-700 hover:underline flex items-center gap-1"
+                >
+                  <span>Buka Toko Shopee</span>
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {upcomingRegions.map((up, idx) => (
-                  <div
+                {shopeeRegions.map((reg, idx) => (
+                  <a
                     key={idx}
-                    className="p-4 rounded-2xl bg-slate-100/80 border border-slate-200/70 opacity-75 cursor-not-allowed select-none"
+                    href={SHOPEE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-orange-300 hover:shadow-md transition-all group block"
                   >
                     <div className="flex items-center justify-between mb-1">
-                      <h4 className="text-sm font-bold text-slate-600 line-through decoration-slate-400">
-                        {up.name}
+                      <h4 className="text-sm font-bold text-slate-800 group-hover:text-orange-600 transition-colors">
+                        {reg.name}
                       </h4>
-                      <span className="text-[10px] font-extrabold text-amber-700 bg-amber-100/80 px-2 py-0.5 rounded-full flex items-center gap-1">
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                      <span className="text-[10px] font-extrabold text-orange-700 bg-orange-50 px-2.5 py-0.5 rounded-full flex items-center gap-1 border border-orange-200">
+                        <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
+                          <path d="M19.78 7.37l-1.92-3.84C17.5 2.82 16.77 2.37 16 2.37H8c-.77 0-1.5.45-1.86 1.16L4.22 7.37c-.6.93-.34 2.16.59 2.76.3.2.66.3 1.02.3h.17l.8 9.57C6.88 20.89 7.6 21.63 8.5 21.63h7c.9 0 1.62-.74 1.7-1.63l.8-9.57h.17c.36 0 .72-.1 1.02-.3.93-.6 1.19-1.83.59-2.76z" />
                         </svg>
-                        <span>{up.status}</span>
+                        <span>{reg.status}</span>
                       </span>
                     </div>
-                    <p className="text-[11px] text-slate-500">{up.note}</p>
-                  </div>
+                    <p className="text-[11px] text-slate-500">{reg.note}</p>
+                  </a>
                 ))}
               </div>
             </div>
@@ -138,7 +153,7 @@ export default function CoverageArea() {
               <div className="relative w-full h-52 sm:h-60 flex items-center justify-center">
                 <Image
                   src="/images/delivery-truck.svg"
-                  alt="Armada Pengiriman Hydro Malang Khusus Merjosari"
+                  alt="Armada Pengiriman Hydro Malang"
                   fill
                   className="object-contain"
                 />
@@ -146,47 +161,58 @@ export default function CoverageArea() {
 
               <div className="space-y-2">
                 <div className="inline-block px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200">
-                  Armada Siaga Wilayah Merjosari
+                  Layanan Antar Tepat &amp; Praktis
                 </div>
                 <h3 className="text-xl font-bold text-slate-900">
-                  Antar Cepat Langsung Sampai Kamar / Dispenser
+                  Antar Cepat Langsung ke Rumah / Dispenser
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-500">
-                  Lokasi kami standby di Merjosari sehingga pesanan galon Anda dapat tiba dalam waktu singkat tanpa repot.
+                  Kurir standby di Graha Merjosari Asri, serta didukung kurir Shopee Instant untuk pengantaran ke wilayah Malang lainnya.
                 </p>
               </div>
 
               <div className="p-4 rounded-2xl bg-sky-50 border border-sky-100 text-left space-y-2">
                 <div className="text-xs font-bold text-sky-900 uppercase">
-                  Ketentuan Layanan Saat Ini:
+                  Pilihan Jalur Pengantaran:
                 </div>
-                <div className="text-xs text-slate-700 space-y-1.5">
+                <div className="text-xs text-slate-700 space-y-2">
                   <div className="flex items-start gap-2">
-                    <span className="text-emerald-600 font-bold">✓</span>
-                    <span><strong>100% Gratis Ongkir</strong> untuk seluruh alamat di Merjosari.</span>
+                    <span className="text-emerald-600 font-bold shrink-0">📍</span>
+                    <span><strong>Warga Graha Merjosari Asri:</strong> 100% Gratis Ongkir langsung lewat WhatsApp kurir kilat.</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-emerald-600 font-bold">✓</span>
-                    <span>Bisa dibantu angkat dan pasang ke dispenser.</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-amber-600 font-bold">ℹ</span>
-                    <span>Wilayah di luar Merjosari sementara belum dapat dilayani.</span>
+                    <span className="text-orange-600 font-bold shrink-0">🛍️</span>
+                    <span><strong>Luar Graha Merjosari Asri:</strong> Pesan mudah via Shopee (bisa Instant, Same Day, atau Reguler).</span>
                   </div>
                 </div>
               </div>
 
-              <a
-                href="https://wa.me/62895702831600?text=Halo%20Hydro%20Malang,%20saya%20di%20wilayah%20Merjosari%20ingin%20pesan%20air%20mineral."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-3.5 px-4 rounded-xl bg-linear-to-r from-emerald-600 to-teal-500 text-white font-bold text-sm shadow-md hover:from-emerald-500 hover:to-teal-400 transition-all flex items-center justify-center gap-2"
-              >
-                <span>Pesan Sekarang (Gratis Ongkir Merjosari)</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </a>
+              {/* Dual CTA */}
+              <div className="space-y-2.5">
+                <a
+                  href="https://wa.me/62895702831600?text=Halo%20Hydro%20Malang,%20saya%20warga%20Perumahan%20Graha%20Merjosari%20Asri%20ingin%20pesan%20air%20mineral%20Cleo."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3.5 px-4 rounded-xl bg-linear-to-r from-emerald-600 to-teal-500 text-white font-bold text-sm shadow-md hover:from-emerald-500 hover:to-teal-400 transition-all flex items-center justify-center gap-2"
+                >
+                  <span>Pesan Langsung (Graha Merjosari Asri)</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+
+                <a
+                  href={SHOPEE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3 px-4 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 font-bold text-xs sm:text-sm border border-orange-200 transition-all flex items-center justify-center gap-2"
+                >
+                  <svg className="w-4 h-4 fill-current text-orange-600" viewBox="0 0 24 24">
+                    <path d="M19.78 7.37l-1.92-3.84C17.5 2.82 16.77 2.37 16 2.37H8c-.77 0-1.5.45-1.86 1.16L4.22 7.37c-.6.93-.34 2.16.59 2.76.3.2.66.3 1.02.3h.17l.8 9.57C6.88 20.89 7.6 21.63 8.5 21.63h7c.9 0 1.62-.74 1.7-1.63l.8-9.57h.17c.36 0 .72-.1 1.02-.3.93-.6 1.19-1.83.59-2.76z" />
+                  </svg>
+                  <span>Beli via Shopee (Wilayah Lain di Malang)</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

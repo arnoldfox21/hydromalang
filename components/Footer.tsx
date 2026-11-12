@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const SHOPEE_URL = "https://shopee.co.id/hydromalang";
+
 export default function Footer() {
   return (
     <footer className="bg-slate-950 text-slate-400 text-sm border-t border-slate-800">
@@ -19,12 +21,19 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
-              Hydro Malang adalah usaha rumahan penyedia air mineral murni berkualitas tinggi dari Merjosari, Lowokwaru, Kota Malang. Saat ini melayani pengantaran khusus wilayah Merjosari — gratis ongkir!
+              Hydro Malang menyediakan air minum mineral bermerek populer dan terpercaya seperti Cleo, Club, dan lainnya. Khusus Perumahan Graha Merjosari Asri gratis ongkir kurir kilat, serta melayani pemesanan ke seluruh wilayah Malang lewat toko online Shopee resmi kami.
             </p>
-            <div className="flex items-center gap-3 pt-2 text-xs font-semibold text-slate-300">
-              <span className="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800">BPOM RI MD</span>
-              <span className="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800">SNI 3553:2015</span>
-              <span className="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800">Halal MUI</span>
+            <div className="flex flex-wrap items-center gap-2 pt-2 text-xs font-semibold text-slate-300">
+              <span className="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800">Brand Resmi Cleo</span>
+              <span className="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800">100% Bersegel Pabrik</span>
+              <a
+                href={SHOPEE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-2.5 py-1 rounded-md bg-orange-950/70 border border-orange-700/60 text-orange-400 hover:text-orange-300 transition-colors"
+              >
+                Shopee Official Store ↗
+              </a>
             </div>
           </div>
 
@@ -51,7 +60,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#proses" className="hover:text-cyan-400 transition-colors">
-                  Proses Higienis
+                  Standar Mutu
                 </a>
               </li>
               <li>
@@ -61,7 +70,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#wilayah" className="hover:text-cyan-400 transition-colors">
-                  Wilayah Antar
+                  Wilayah Antar &amp; Shopee
                 </a>
               </li>
             </ul>
@@ -70,27 +79,27 @@ export default function Footer() {
           {/* Products */}
           <div className="space-y-3">
             <h4 className="text-white font-bold text-sm uppercase tracking-wider">
-              Daftar Produk
+              Daftar Produk (Ready: Cleo)
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
                 <a href="#produk" className="hover:text-cyan-400 transition-colors">
-                  Air Mineral Kecil — Rp 20.000
+                  Cleo Air Mineral Kecil — Rp 20.000
                 </a>
               </li>
               <li>
                 <a href="#produk" className="hover:text-cyan-400 transition-colors">
-                  Air 12.8L — Rp 19.000
+                  Cleo Air 12.8L — Rp 19.000
                 </a>
               </li>
               <li>
                 <a href="#produk" className="hover:text-cyan-400 transition-colors">
-                  Air 15L — Rp 20.000
+                  Cleo Air 15L — Rp 20.000
                 </a>
               </li>
               <li>
                 <a href="#produk" className="hover:text-cyan-400 transition-colors">
-                  Air 19L + Galon — Rp 50.000
+                  Cleo Air 19L + Galon — Rp 50.000
                 </a>
               </li>
             </ul>
@@ -99,24 +108,27 @@ export default function Footer() {
           {/* Contact & Hours */}
           <div className="space-y-3">
             <h4 className="text-white font-bold text-sm uppercase tracking-wider">
-              Kontak &amp; Layanan
+              Layanan &amp; Pemesanan
             </h4>
             <div className="space-y-2 text-xs leading-relaxed">
               <div>
-                <span className="text-slate-200 font-semibold block">Wilayah Pengantaran:</span>
-                <span className="text-emerald-400 font-bold">Merjosari, Lowokwaru, Kota Malang (Gratis Ongkir)</span> • Area lain segera hadir
+                <span className="text-slate-200 font-semibold block">Kurir Kilat (100% Gratis Ongkir):</span>
+                <span className="text-emerald-400 font-bold">Khusus Perumahan Graha Merjosari Asri</span>
               </div>
               <div>
-                <span className="text-slate-200 font-semibold block">Depo Distribusi:</span>
-                Jl. Raya Tlogomas No. 88 (Dekat Merjosari), Kota Malang
+                <span className="text-slate-200 font-semibold block">Pemesanan Luar Graha Merjosari:</span>
+                <a
+                  href={SHOPEE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-orange-400 hover:text-orange-300 font-bold underline block"
+                >
+                  Toko Shopee: shopee.co.id/hydromalang ↗
+                </a>
               </div>
               <div>
-                <span className="text-slate-200 font-semibold block">WhatsApp Order:</span>
+                <span className="text-slate-200 font-semibold block">WhatsApp CS:</span>
                 0895-7028-31600
-              </div>
-              <div>
-                <span className="text-slate-200 font-semibold block">Email Resmi:</span>
-                order@hydromalang.com
               </div>
               <div>
                 <span className="text-slate-200 font-semibold block">Jam Operasional:</span>
@@ -132,7 +144,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Hydro Malang. Hak Cipta Dilindungi Undang-Undang.
           </div>
           <div className="flex items-center gap-6">
-            <span className="text-slate-400">Kesegaran Alami Pegunungan Malang untuk Hidup Sehat</span>
+            <span className="text-slate-400">Penyedia Air Minum Mineral Populer Terpercaya</span>
           </div>
         </div>
       </div>

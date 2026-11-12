@@ -2,38 +2,38 @@ export default function Testimonials() {
   const reviews = [
     {
       name: "Ibu Ratna Wulandari",
-      role: "Ibu Rumah Tangga",
-      location: "Sawojajar, Kota Malang",
+      role: "Warga Graha Merjosari Asri",
+      location: "Blok B, Graha Merjosari Asri",
       avatarBg: "bg-pink-100 text-pink-600",
       initials: "RW",
-      text: "Sejak ganti ke Hydro Malang, rasa airnya jauh lebih segar dan tidak ada bau atau rasa aneh sama sekali. Anak-anak jadi rajin minum air putih. Yang paling saya suka, mas kurirnya selalu ramah dan mau bantu angkat galon ke dispenser atas tanpa diminta.",
+      text: "Sangat terbantu ada Hydro Malang di perumahan kami! Pesan Cleo galon 15L lewat WA, 15 menit kemudian sudah sampai di depan pagar. Mas kurirnya ramah banget, langsung dibantu pasang ke dispenser di dapur.",
       rating: 5,
     },
     {
-      name: "Dimas Prasetyo",
-      role: "Owner Kafe 'Kopi Senja'",
-      location: "Jl. Soekarno-Hatta (Suhat), Malang",
+      name: "Bpk. Dimas Prasetyo",
+      role: "Warga Graha Merjosari Asri",
+      location: "Blok A, Graha Merjosari Asri",
       avatarBg: "bg-amber-100 text-amber-700",
       initials: "DP",
-      text: "Untuk manual brew dan espresso machine, TDS air sangat krusial. Hydro Malang TDS-nya sangat stabil di angka ideal, bikin ekstraksi kopi kami aromatik dan tidak asam liar. Pasokan galon untuk kafe selalu aman dan pengantaran tepat waktu setiap pagi.",
+      text: "Keluarga kami memang cocoknya minum air Cleo karena rasanya ringan dan segar. Senang sekali sekarang bisa pesan rutin dengan gratis ongkir khusus perumahan kita. Galonnya selalu bersih dan segelnya original pabrik.",
       rating: 5,
     },
     {
-      name: "Hendra Gunawan, S.E.",
-      role: "Office Manager",
-      location: "Kawasan Perkantoran Klojen, Malang",
+      name: "Hendra Gunawan",
+      role: "Warga Graha Merjosari Asri",
+      location: "Blok C, Graha Merjosari Asri",
       avatarBg: "bg-sky-100 text-sky-700",
       initials: "HG",
-      text: "Kantor kami langganan 30 galon per bulan. Sistem berlangganannya sangat rapi dengan invoice resmi dan dispenser terawat. Karyawan merasa lebih fit dan produktif. Sangat recommended untuk korporasi atau instansi di Malang.",
+      text: "Kemarin baru beli paket perdana Cleo 19L + Galon baru seharga Rp 50.000. Kondisi galon mulus kinclong dan tersegel rapat. Praktis tanpa perlu repot keluar perumahan bawa galon berat-berat pakai motor.",
       rating: 5,
     },
     {
-      name: "Anisa Maulida",
-      role: "Ketua Panitia Seminar Nasional",
-      location: "Kampus Lowokwaru, Malang",
+      name: "Ibu Anisa Maulida",
+      role: "Warga Graha Merjosari Asri",
+      location: "Blok D, Graha Merjosari Asri",
       avatarBg: "bg-teal-100 text-teal-700",
       initials: "AM",
-      text: "Pesan 40 dus Hydro Cup 220ml untuk acara seminar kampus. Respon admin WA super cepat, pesanan diantar 2 jam sebelum acara dimulai dalam kondisi kardus mulus dan bersih. Tamu dan peserta puas. Terima kasih Hydro Malang!",
+      text: "Respon admin WA cepat dan pengantaran tepat waktu. Biasanya saya pesan Cleo 12.8L yang slim biar enteng diangkat. Pelayanan mantap untuk warga Graha Merjosari Asri!",
       rating: 5,
     },
   ];
@@ -44,13 +44,13 @@ export default function Testimonials() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <span className="text-xs sm:text-sm font-bold tracking-widest text-sky-600 uppercase bg-sky-50 px-3 py-1.5 rounded-full border border-sky-100">
-            Kata Mereka
+            Kata Warga
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Dipercaya Ribuan Keluarga &amp; Pelaku Usaha di Malang
+            Dipercaya Warga <span className="text-sky-600">Perumahan Graha Merjosari Asri</span>
           </h2>
           <p className="text-base text-slate-600 leading-relaxed">
-            Kepuasan pelanggan adalah bukti dedikasi kami dalam menghadirkan air minum berkualitas terbaik setiap hari.
+            Kepuasan tetangga dan warga perumahan adalah dedikasi utama kami dalam menghadirkan air minum mineral bermerek berkualitas setiap hari.
           </p>
         </div>
 

@@ -22,9 +22,9 @@ export default function WaterCalculator() {
   const singleUseCost = Math.round(totalLitersMonthly * 4500);
   const savings = singleUseCost - estimatedCost;
 
-  const waOrderText = `Halo Hydro Malang, saya sudah menghitung kebutuhan air untuk ${
+  const waOrderText = `Halo Hydro Malang, saya warga Graha Merjosari Asri sudah menghitung kebutuhan air untuk ${
     mode === "family" ? "Keluarga" : "Kantor"
-  } (${peopleCount} orang). Estimasi butuh ${gallonsMonthly} galon (Air 15L)/bulan. Mohon info ketersediaan dan konfirmasi pengantaran. Terima kasih!`;
+  } (${peopleCount} orang). Estimasi butuh ${gallonsMonthly} galon (Cleo 15L)/bulan. Mohon info ketersediaan dan konfirmasi pengantaran gratis ongkir. Terima kasih!`;
 
   return (
     <section id="kalkulator" className="py-20 bg-linear-to-b from-white via-sky-50/50 to-white relative">
@@ -162,7 +162,7 @@ export default function WaterCalculator() {
                     Rp {estimatedCost.toLocaleString("id-ID")}
                   </span>
                   <span className="text-xs font-semibold text-slate-500 block">
-                    / bulan (@ Rp 20.000 Air 15L)
+                    / bulan (@ Rp 20.000 Cleo 15L)
                   </span>
                 </div>
                 <span className="text-xs text-emerald-800 font-semibold flex items-center gap-1">
