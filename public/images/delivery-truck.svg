@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" width="100%" height="100%">
+  <defs>
+    <linearGradient id="truckBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <linearGradient id="truckCabin" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <linearGradient id="wheelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <filter id="truckShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#0369a1" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Speed lines -->
+  <g stroke="#38bdf8" stroke-width="3" stroke-linecap="round" opacity="0.6">
+    <line x1="30" y1="120" x2="110" y2="120" />
+    <line x1="15" y1="150" x2="85" y2="150" stroke-width="4" />
+    <line x1="45" y1="180" x2="105" y2="180" />
+    <line x1="20" y1="210" x2="90" y2="210" stroke-width="3.5" />
+  </g>
+
+  <!-- Ground Shadow -->
+  <ellipse cx="330" cy="285" rx="230" ry="14" fill="#0369a1" opacity="0.2" />
+
+  <g filter="url(#truckShadow)">
+    <!-- Cargo Box (Hydro Malang Delivery Van) -->
+    <rect x="120" y="80" width="280" height="150" rx="12" fill="url(#truckBody)" stroke="#7dd3fc" stroke-width="2" />
+    
+    <!-- White Stripe on Cargo -->
+    <rect x="120" y="140" width="280" height="40" fill="#ffffff" />
+    <text x="260" y="167" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#0369a1" text-anchor="middle" letter-spacing="1">HYDRO MALANG</text>
+    
+    <text x="260" y="200" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#bae6fd" text-anchor="middle">LAYANAN PESAN ANTAR KILAT</text>
+
+    <!-- Gallon graphic on cargo box -->
+    <rect x="145" y="95" width="22" height="30" rx="4" fill="#bae6fd" opacity="0.7" />
+    <rect x="151" y="90" width="10" height="5" rx="1" fill="#ffffff" />
+    <rect x="175" y="95" width="22" height="30" rx="4" fill="#bae6fd" opacity="0.7" />
+    <rect x="181" y="90" width="10" height="5" rx="1" fill="#ffffff" />
+
+    <!-- Driver Cabin -->
+    <path d="M 400 120 L 470 120 C 495 120, 520 150, 535 180 L 535 230 L 400 230 Z" fill="url(#truckCabin)" stroke="#38bdf8" stroke-width="1.5" />
+
+    <!-- Windshield / Window -->
+    <path d="M 415 130 L 465 130 C 480 130, 495 150, 508 175 L 415 175 Z" fill="#e0f2fe" opacity="0.9" stroke="#0284c7" stroke-width="1.5" />
+    
+    <!-- Door seam line -->
+    <line x1="445" y1="175" x2="445" y2="230" stroke="#0284c7" stroke-width="1.5" />
+    <!-- Door handle -->
+    <rect x="450" y="185" width="14" height="4" rx="2" fill="#334155" />
+
+    <!-- Headlight -->
+    <path d="M 530 190 L 542 195 L 530 205 Z" fill="#fef08a" stroke="#f59e0b" stroke-width="1" />
+    <!-- Light beam -->
+    <polygon points="542,197 590,180 590,225 542,203" fill="#fef08a" opacity="0.25" />
+
+    <!-- Front Bumper -->
+    <rect x="525" y="215" width="18" height="15" rx="3" fill="#475569" />
+
+    <!-- Chassis Base -->
+    <rect x="135" y="230" width="380" height="12" rx="4" fill="#1e293b" />
+
+    <!-- Wheels -->
+    <!-- Rear Wheel 1 -->
+    <g transform="translate(180, 240)">
+      <circle cx="0" cy="0" r="38" fill="url(#wheelGrad)" />
+      <circle cx="0" cy="0" r="22" fill="#94a3b8" />
+      <circle cx="0" cy="0" r="10" fill="#334155" />
+      <circle cx="0" cy="0" r="4" fill="#f8fafc" />
+    </g>
+
+    <!-- Rear Wheel 2 -->
+    <g transform="translate(265, 240)">
+      <circle cx="0" cy="0" r="38" fill="url(#wheelGrad)" />
+      <circle cx="0" cy="0" r="22" fill="#94a3b8" />
+      <circle cx="0" cy="0" r="10" fill="#334155" />
+      <circle cx="0" cy="0" r="4" fill="#f8fafc" />
+    </g>
+
+    <!-- Front Wheel -->
+    <g transform="translate(460, 240)">
+      <circle cx="0" cy="0" r="38" fill="url(#wheelGrad)" />
+      <circle cx="0" cy="0" r="22" fill="#94a3b8" />
+      <circle cx="0" cy="0" r="10" fill="#334155" />
+      <circle cx="0" cy="0" r="4" fill="#f8fafc" />
+    </g>
+  </g>
+</svg>

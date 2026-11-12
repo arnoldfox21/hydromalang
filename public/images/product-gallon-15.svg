@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 610" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g15Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.9" />
+      <stop offset="18%" stop-color="#38bdf8" stop-opacity="0.75" />
+      <stop offset="48%" stop-color="#bae6fd" stop-opacity="0.5" />
+      <stop offset="75%" stop-color="#0284c7" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0.95" />
+    </linearGradient>
+
+    <linearGradient id="water15" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.4" />
+      <stop offset="50%" stop-color="#0284c7" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0.9" />
+    </linearGradient>
+
+    <linearGradient id="cap15" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4ed8" />
+      <stop offset="50%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#1e40af" />
+    </linearGradient>
+
+    <filter id="shadow15" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="13" flood-color="#0369a1" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <ellipse cx="240" cy="550" rx="155" ry="22" fill="#0284c7" opacity="0.18" />
+  <ellipse cx="240" cy="550" rx="110" ry="13" fill="#0369a1" opacity="0.25" />
+
+  <g filter="url(#shadow15)">
+    <!-- Neck -->
+    <rect x="211" y="66" width="58" height="44" rx="4" fill="url(#g15Grad)" stroke="#38bdf8" stroke-width="1.5" />
+    <ellipse cx="240" cy="110" rx="34" ry="7" fill="#0284c7" />
+
+    <!-- Shoulder -->
+    <path d="M 205 110 C 172 145, 134 172, 125 212 L 355 212 C 346 172, 308 145, 275 110 Z" fill="url(#g15Grad)" stroke="#7dd3fc" stroke-width="1" />
+
+    <!-- Main Cylinder Body (15L medium) -->
+    <rect x="120" y="212" width="240" height="295" rx="19" fill="url(#g15Grad)" />
+    
+    <!-- Water Inside -->
+    <path d="M 122 230 Q 240 244 358 230 L 358 495 Q 240 514 122 495 Z" fill="url(#water15)" opacity="0.85" />
+
+    <!-- Ribs -->
+    <rect x="120" y="250" width="240" height="11" rx="5.5" fill="#0284c7" opacity="0.45" />
+    <line x1="125" y1="252" x2="355" y2="252" stroke="#bae6fd" stroke-width="1.5" opacity="0.6" />
+
+    <rect x="120" y="308" width="240" height="11" rx="5.5" fill="#0284c7" opacity="0.45" />
+    <line x1="125" y1="310" x2="355" y2="310" stroke="#bae6fd" stroke-width="1.5" opacity="0.6" />
+
+    <rect x="120" y="430" width="240" height="11" rx="5.5" fill="#0284c7" opacity="0.45" />
+    <line x1="125" y1="432" x2="355" y2="432" stroke="#bae6fd" stroke-width="1.5" opacity="0.6" />
+
+    <!-- Base -->
+    <path d="M 125 507 C 135 532, 345 532, 355 507 Z" fill="#0369a1" />
+
+    <!-- Handle -->
+    <path d="M 120 275 C 78 280, 78 355, 120 360 L 120 341 C 98 336, 98 299, 120 294 Z" fill="url(#g15Grad)" stroke="#38bdf8" stroke-width="1.5" />
+
+    <!-- Highlights -->
+    <path d="M 152 135 L 152 495" stroke="#ffffff" stroke-width="11" stroke-linecap="round" opacity="0.35" />
+    <path d="M 172 150 L 172 480" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" opacity="0.5" />
+    <path d="M 330 140 L 330 490" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.2" />
+
+    <!-- Brand Label -->
+    <rect x="148" y="332" width="184" height="85" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2" />
+    <text x="240" y="360" font-family="system-ui, sans-serif" font-size="17" font-weight="900" fill="#0369a1" text-anchor="middle" letter-spacing="1">HYDRO MALANG</text>
+    <text x="240" y="377" font-family="system-ui, sans-serif" font-size="11.5" font-weight="800" fill="#0284c7" text-anchor="middle">AIR MINERAL 15 LITER</text>
+    <text x="240" y="391" font-family="system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#64748b" text-anchor="middle">Volume Ideal untuk Keluarga Sehat</text>
+
+    <rect x="190" y="398" width="100" height="14" rx="7" fill="#0284c7" />
+    <text x="240" y="408" font-family="system-ui, sans-serif" font-size="8.5" font-weight="bold" fill="#ffffff" text-anchor="middle">NETTO 15 LITER</text>
+
+    <!-- Sealed Cap -->
+    <path d="M 206 46 L 274 46 L 271 68 L 209 68 Z" fill="url(#cap15)" stroke="#1e3a8a" stroke-width="1.5" />
+    <ellipse cx="240" cy="46" rx="34" ry="7.5" fill="#60a5fa" />
+    <rect x="225" y="34" width="30" height="12" rx="3" fill="#ef4444" />
+    <text x="240" y="42" font-family="system-ui, sans-serif" font-size="7.5" font-weight="900" fill="#ffffff" text-anchor="middle">SEALED</text>
+  </g>
+</svg>

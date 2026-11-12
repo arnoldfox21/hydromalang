@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 520" width="100%" height="100%">
+  <defs>
+    <linearGradient id="petGradSmall" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.8" />
+      <stop offset="25%" stop-color="#38bdf8" stop-opacity="0.5" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.75" />
+      <stop offset="75%" stop-color="#38bdf8" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0.85" />
+    </linearGradient>
+
+    <linearGradient id="liquidGradSmall" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.35" />
+      <stop offset="70%" stop-color="#38bdf8" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.75" />
+    </linearGradient>
+
+    <linearGradient id="capGradSmall" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0369a1" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <filter id="shadowSmall" x="-15%" y="-10%" width="130%" height="120%">
+      <feDropShadow dx="0" dy="14" stdDeviation="10" flood-color="#0284c7" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Ground Shadow -->
+  <ellipse cx="160" cy="485" rx="85" ry="14" fill="#0284c7" opacity="0.22" />
+  <ellipse cx="160" cy="485" rx="55" ry="8" fill="#0369a1" opacity="0.3" />
+
+  <g filter="url(#shadowSmall)">
+    <!-- Cap -->
+    <rect x="135" y="45" width="50" height="28" rx="4" fill="url(#capGradSmall)" stroke="#0284c7" stroke-width="1" />
+    <line x1="143" y1="47" x2="143" y2="71" stroke="#bae6fd" stroke-width="1.5" />
+    <line x1="153" y1="47" x2="153" y2="71" stroke="#bae6fd" stroke-width="1.5" />
+    <line x1="163" y1="47" x2="163" y2="71" stroke="#bae6fd" stroke-width="1.5" />
+    <line x1="173" y1="47" x2="173" y2="71" stroke="#bae6fd" stroke-width="1.5" />
+    <ellipse cx="160" cy="45" rx="25" ry="6" fill="#7dd3fc" />
+
+    <!-- Safety ring -->
+    <rect x="137" y="73" width="46" height="7" rx="2" fill="#0284c7" />
+
+    <!-- Neck & Shoulder -->
+    <path d="M 140 80 L 140 105 C 140 135, 95 160, 95 195 L 225 195 C 225 160, 180 135, 180 105 L 180 80 Z" fill="url(#petGradSmall)" />
+
+    <!-- Main Bottle Body -->
+    <rect x="95" y="195" width="130" height="255" rx="14" fill="url(#petGradSmall)" />
+
+    <!-- Liquid inside -->
+    <path d="M 98 165 Q 160 175 222 165 L 222 445 Q 160 455 98 445 Z" fill="url(#liquidGradSmall)" opacity="0.8" />
+
+    <!-- Grip rings -->
+    <path d="M 96 220 Q 160 230 224 220" stroke="#bae6fd" stroke-width="2" fill="none" opacity="0.6" />
+    <path d="M 96 350 Q 160 360 224 350" stroke="#bae6fd" stroke-width="2" fill="none" opacity="0.6" />
+    <path d="M 96 370 Q 160 380 224 370" stroke="#bae6fd" stroke-width="2" fill="none" opacity="0.6" />
+
+    <!-- Brand Label -->
+    <rect x="94" y="240" width="132" height="95" rx="8" fill="#ffffff" stroke="#38bdf8" stroke-width="1.2" />
+    <path d="M 94 240 L 226 240 L 226 262 Q 160 274 94 262 Z" fill="#0284c7" opacity="0.12" />
+
+    <!-- Mountain Icon on Label -->
+    <polygon points="160,250 142,270 178,270" fill="#0284c7" opacity="0.8" />
+    <polygon points="172,256 160,270 186,270" fill="#38bdf8" opacity="0.7" />
+
+    <text x="160" y="286" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#0369a1" text-anchor="middle" letter-spacing="0.8">HYDRO MALANG</text>
+    <text x="160" y="299" font-family="system-ui, sans-serif" font-size="8.5" font-weight="700" fill="#0ea5e9" text-anchor="middle">AIR MINERAL KECIL</text>
+    <text x="160" y="311" font-family="system-ui, sans-serif" font-size="7.5" font-weight="600" fill="#64748b" text-anchor="middle">Murni &amp; Praktis</text>
+
+    <rect x="125" y="318" width="70" height="11" rx="5.5" fill="#0284c7" />
+    <text x="160" y="326.5" font-family="system-ui, sans-serif" font-size="7" font-weight="bold" fill="#ffffff" text-anchor="middle">KEMASAN HEMAT</text>
+
+    <!-- Highlights -->
+    <path d="M 110 120 L 110 440" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.45" />
+    <path d="M 120 130 L 120 435" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.65" />
+    <path d="M 210 130 L 210 440" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.25" />
+
+    <!-- Droplets -->
+    <circle cx="106" cy="190" r="3" fill="#ffffff" opacity="0.85" />
+    <circle cx="215" cy="205" r="3.5" fill="#ffffff" opacity="0.8" />
+    <circle cx="216" cy="385" r="3" fill="#ffffff" opacity="0.8" />
+    <circle cx="105" cy="405" r="4" fill="#ffffff" opacity="0.85" />
+  </g>
+</svg>

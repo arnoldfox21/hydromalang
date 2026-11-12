@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="petGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.8" />
+      <stop offset="20%" stop-color="#38bdf8" stop-opacity="0.5" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.7" />
+      <stop offset="75%" stop-color="#38bdf8" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0.85" />
+    </linearGradient>
+
+    <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.3" />
+      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.7" />
+    </linearGradient>
+
+    <linearGradient id="bottleCap" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0369a1" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <filter id="bottleShadow" x="-15%" y="-10%" width="130%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="12" flood-color="#0284c7" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Ground Shadow -->
+  <ellipse cx="180" cy="560" rx="100" ry="16" fill="#0284c7" opacity="0.2" />
+  <ellipse cx="180" cy="560" rx="65" ry="9" fill="#0369a1" opacity="0.3" />
+
+  <g filter="url(#bottleShadow)">
+    <!-- Bottle Cap -->
+    <rect x="155" y="45" width="50" height="30" rx="4" fill="url(#bottleCap)" stroke="#0284c7" stroke-width="1" />
+    <line x1="162" y1="47" x2="162" y2="73" stroke="#bae6fd" stroke-width="1.5" />
+    <line x1="172" y1="47" x2="172" y2="73" stroke="#bae6fd" stroke-width="1.5" />
+    <line x1="182" y1="47" x2="182" y2="73" stroke="#bae6fd" stroke-width="1.5" />
+    <line x1="192" y1="47" x2="192" y2="73" stroke="#bae6fd" stroke-width="1.5" />
+    <line x1="198" y1="47" x2="198" y2="73" stroke="#bae6fd" stroke-width="1.5" />
+    <ellipse cx="180" cy="45" rx="25" ry="6" fill="#7dd3fc" />
+
+    <!-- Safety ring -->
+    <rect x="157" y="75" width="46" height="8" rx="2" fill="#0284c7" />
+
+    <!-- Bottle Neck -->
+    <path d="M 160 83 L 160 115 C 160 145, 115 170, 115 210 L 245 210 C 245 170, 200 145, 200 115 L 200 83 Z" fill="url(#petGrad)" />
+
+    <!-- Bottle Upper Body -->
+    <rect x="115" y="210" width="130" height="90" rx="6" fill="url(#petGrad)" />
+    
+    <!-- Bottle Ergonomic Waist / Grips -->
+    <path d="M 115 300 C 125 325, 125 345, 115 370 L 245 370 C 235 345, 235 325, 245 300 Z" fill="url(#petGrad)" />
+
+    <!-- Bottle Lower Body -->
+    <rect x="115" y="370" width="130" height="150" rx="8" fill="url(#petGrad)" />
+
+    <!-- Petaloid Base -->
+    <path d="M 115 520 C 120 545, 140 550, 150 545 C 160 552, 175 552, 180 545 C 185 552, 200 552, 210 545 C 220 550, 240 545, 245 520 Z" fill="#0284c7" opacity="0.6" />
+
+    <!-- Liquid interior -->
+    <path d="M 118 170 Q 180 180 242 170 L 242 525 Q 180 540 118 525 Z" fill="url(#liquidGrad)" opacity="0.75" />
+
+    <!-- Sleek Minimalist Label -->
+    <rect x="114" y="270" width="132" height="110" rx="6" fill="#ffffff" stroke="#38bdf8" stroke-width="1" />
+    <path d="M 114 270 L 246 270 L 246 295 Q 180 310 114 295 Z" fill="#0284c7" opacity="0.1" />
+
+    <!-- Mountains Icon on Label -->
+    <polygon points="180,285 160,310 200,310" fill="#0284c7" opacity="0.8" />
+    <polygon points="195,292 180,310 210,310" fill="#38bdf8" opacity="0.7" />
+
+    <!-- Label Typography -->
+    <text x="180" y="328" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#0369a1" text-anchor="middle" letter-spacing="1">HYDRO</text>
+    <text x="180" y="342" font-family="system-ui, sans-serif" font-size="9" font-weight="800" fill="#0284c7" text-anchor="middle" letter-spacing="0.5">MALANG</text>
+    <text x="180" y="356" font-family="system-ui, sans-serif" font-size="7" font-weight="600" fill="#64748b" text-anchor="middle">AIR MINERAL ALAMI • 600ml</text>
+
+    <rect x="148" y="362" width="64" height="12" rx="6" fill="#0284c7" />
+    <text x="180" y="371" font-family="system-ui, sans-serif" font-size="7" font-weight="bold" fill="#ffffff" text-anchor="middle">KEMASAN PRAKTIS</text>
+
+    <!-- Light Highlights on PET plastic -->
+    <path d="M 130 150 L 130 520" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.45" />
+    <path d="M 142 160 L 142 510" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.6" />
+    <path d="M 230 150 L 230 515" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.25" />
+
+    <!-- Fresh Water Droplets -->
+    <circle cx="125" cy="225" r="3.5" fill="#ffffff" opacity="0.8" />
+    <circle cx="122" cy="235" r="2.5" fill="#ffffff" opacity="0.7" />
+    <circle cx="235" cy="245" r="4" fill="#ffffff" opacity="0.85" />
+    <circle cx="237" cy="420" r="3.5" fill="#ffffff" opacity="0.8" />
+    <circle cx="126" cy="450" r="4.5" fill="#ffffff" opacity="0.85" />
+    <circle cx="130" cy="465" r="3" fill="#ffffff" opacity="0.75" />
+  </g>
+</svg>
