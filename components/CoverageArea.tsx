@@ -6,12 +6,9 @@ export default function CoverageArea() {
   const activeRegion = {
     name: "Perumahan Graha Merjosari Asri (Aktif)",
     subAreas: [
-      "Blok A — Graha Merjosari Asri",
-      "Blok B — Graha Merjosari Asri",
-      "Blok C — Graha Merjosari Asri",
-      "Blok D — Graha Merjosari Asri",
-      "Blok E & Area Sekitar Perumahan",
-      "Seluruh Hunian Warga Graha Merjosari Asri",
+      "Cluster Melati",
+      "Cluster Anggrek",
+      "Cluster Lavender",
     ],
     estimate: "10 - 20 Menit",
     status: "TERSEDIA SEKARANG",
@@ -80,10 +77,10 @@ export default function CoverageArea() {
               </div>
 
               <p className="text-xs sm:text-sm text-emerald-50 mb-4 leading-relaxed">
-                Jangkauan aktif kurir langsung meliputi seluruh blok perumahan Graha Merjosari Asri:
+                Jangkauan aktif kurir langsung meliputi seluruh cluster perumahan Graha Merjosari Asri:
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs sm:text-sm">
                 {activeRegion.subAreas.map((area, idx) => (
                   <div key={idx} className="flex items-center gap-2 text-white/95 bg-white/10 px-3 py-1.5 rounded-xl backdrop-blur-xs">
                     <svg className="w-4 h-4 text-emerald-200 shrink-0" fill="currentColor" viewBox="0 0 20 20">

@@ -22,7 +22,6 @@
     --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-amber-500: oklch(76.9% 0.188 70.08);
     --color-amber-600: oklch(66.6% 0.179 58.318);
-    --color-amber-700: oklch(55.5% 0.163 48.998);
     --color-amber-800: oklch(47.3% 0.137 46.201);
     --color-emerald-50: oklch(97.9% 0.021 166.113);
     --color-emerald-100: oklch(95% 0.052 163.051);
@@ -33,12 +32,10 @@
     --color-emerald-600: oklch(59.6% 0.145 163.225);
     --color-emerald-700: oklch(50.8% 0.118 165.612);
     --color-emerald-800: oklch(43.2% 0.095 166.913);
-    --color-teal-100: oklch(95.3% 0.051 180.801);
     --color-teal-200: oklch(91% 0.096 180.426);
     --color-teal-400: oklch(77.7% 0.152 181.912);
     --color-teal-500: oklch(70.4% 0.14 182.503);
     --color-teal-600: oklch(60% 0.118 184.704);
-    --color-teal-700: oklch(51.1% 0.096 186.391);
     --color-cyan-50: oklch(98.4% 0.019 200.873);
     --color-cyan-200: oklch(91.7% 0.08 205.041);
     --color-cyan-400: oklch(78.9% 0.154 211.53);
@@ -58,8 +55,6 @@
     --color-sky-950: oklch(29.3% 0.066 243.157);
     --color-indigo-50: oklch(96.2% 0.018 272.314);
     --color-indigo-600: oklch(51.1% 0.262 276.966);
-    --color-pink-100: oklch(94.8% 0.028 342.258);
-    --color-pink-600: oklch(59.2% 0.249 0.584);
     --color-rose-50: oklch(96.9% 0.015 12.422);
     --color-rose-600: oklch(58.6% 0.253 17.585);
     --color-slate-50: oklch(98.4% 0.003 247.858);
@@ -563,9 +558,6 @@
   .w-10 {
     width: calc(var(--spacing) * 10);
   }
-  .w-12 {
-    width: calc(var(--spacing) * 12);
-  }
   .w-14 {
     width: calc(var(--spacing) * 14);
   }
@@ -993,9 +985,6 @@
       background-color: color-mix(in oklab, var(--color-orange-950) 70%, transparent);
     }
   }
-  .bg-pink-100 {
-    background-color: var(--color-pink-100);
-  }
   .bg-rose-50 {
     background-color: var(--color-rose-50);
   }
@@ -1088,9 +1077,6 @@
   }
   .bg-slate-950 {
     background-color: var(--color-slate-950);
-  }
-  .bg-teal-100 {
-    background-color: var(--color-teal-100);
   }
   .bg-teal-200\/20 {
     background-color: color-mix(in srgb, oklch(91% 0.096 180.426) 20%, transparent);
@@ -1531,14 +1517,8 @@
   .whitespace-nowrap {
     white-space: nowrap;
   }
-  .text-amber-400 {
-    color: var(--color-amber-400);
-  }
   .text-amber-600 {
     color: var(--color-amber-600);
-  }
-  .text-amber-700 {
-    color: var(--color-amber-700);
   }
   .text-amber-800 {
     color: var(--color-amber-800);
@@ -1591,9 +1571,6 @@
   .text-orange-950 {
     color: var(--color-orange-950);
   }
-  .text-pink-600 {
-    color: var(--color-pink-600);
-  }
   .text-rose-600 {
     color: var(--color-rose-600);
   }
@@ -1639,9 +1616,6 @@
   .text-slate-900 {
     color: var(--color-slate-900);
   }
-  .text-teal-700 {
-    color: var(--color-teal-700);
-  }
   .text-transparent {
     color: transparent;
   }
@@ -1656,9 +1630,6 @@
   }
   .uppercase {
     text-transform: uppercase;
-  }
-  .italic {
-    font-style: italic;
   }
   .underline {
     text-decoration-line: underline;

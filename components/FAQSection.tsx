@@ -20,7 +20,7 @@ const faqs: FAQItem[] = [
   {
     question: "Wilayah mana saja yang dijangkau dan bagaimana ketentuan gratis ongkirnya?",
     answer:
-      "Pengantaran kurir kilat langsung 100% GRATIS ONGKIR berlaku khusus untuk warga Perumahan Graha Merjosari Asri (Blok A, B, C, D, E). Untuk seluruh wilayah lainnya di Kota Malang dan sekitarnya, pemesanan dilayani via Shopee dengan opsi kurir Instant, Same Day, maupun Reguler.",
+      "Pengantaran kurir kilat langsung 100% GRATIS ONGKIR berlaku khusus untuk warga Perumahan Graha Merjosari Asri (Cluster Melati, Anggrek, dan Lavender). Untuk seluruh wilayah lainnya di Kota Malang dan sekitarnya, pemesanan dilayani via Shopee dengan opsi kurir Instant, Same Day, maupun Reguler.",
     shopeeLink: true,
   },
   {

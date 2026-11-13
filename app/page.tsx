@@ -5,7 +5,6 @@ import ProductSection from "@/components/ProductSection";
 import WaterCalculator from "@/components/WaterCalculator";
 import PurificationProcess from "@/components/PurificationProcess";
 import CoverageArea from "@/components/CoverageArea";
-import Testimonials from "@/components/Testimonials";
 import OrderForm from "@/components/OrderForm";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
@@ -35,9 +34,6 @@ export default function Home() {
 
         {/* Jangkauan Area Antar Malang Raya */}
         <CoverageArea />
-
-        {/* Testimoni Pelanggan */}
-        <Testimonials />
 
         {/* Formulir Pemesanan Cepat WA */}
         <OrderForm />
