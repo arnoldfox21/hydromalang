@@ -60,7 +60,7 @@ const products: Product[] = [
     badge: "Cleo • Praktis & Higienis",
     description:
       "Air mineral murni Cleo kemasan kecil yang higienis dan praktis. Sangat pas untuk kebutuhan tamu, bekal harian, rapat, atau acara keluarga.",
-    image: "/images/product-small-bottle.svg",
+    image: "/images/products/cleo-220ml.jpeg",
     popular: false,
     features: [
       "Produk Cleo resmi 100% bersegel pabrik",
@@ -82,7 +82,7 @@ Mohon konfirmasi ketersediaan dan pengantaran ke rumah saya. Terima kasih!`,
     badge: "Cleo • Slim & Ringan",
     description:
       "Galon Cleo ukuran 12.8 Liter ukuran slim yang ringan dan hemat tempat. Solusi tepat agar mudah diangkat dan dipasang langsung ke dispenser.",
-    image: "/images/product-gallon-12.svg",
+    image: "/images/products/cleo-12L.jpeg",
     popular: false,
     features: [
       "Volume 12.8 Liter ramah dispenser",
@@ -104,7 +104,7 @@ Mohon konfirmasi ketersediaan dan pengantaran ke rumah saya. Terima kasih!`,
     badge: "Cleo • Paling Favorit",
     description:
       "Kemasan galon Cleo 15 Liter dengan kapasitas pas untuk konsumsi keluarga mingguan. Menghadirkan kesegaran air murni dengan harga ekonomis.",
-    image: "/images/product-gallon-15.svg",
+    image: "/images/products/cleo-15L.jpeg",
     popular: true,
     features: [
       "Kapasitas 15 Liter pas & hemat",
@@ -126,7 +126,7 @@ Mohon konfirmasi ketersediaan dan pengantaran ke rumah saya. Terima kasih!`,
     badge: "Cleo • Paket Komplit",
     description:
       "Paket perdana siap pakai: sudah termasuk galon baru resmi 19 Liter berkualitas Food Grade BPA-Free, terisi penuh air murni Cleo siap pasang.",
-    image: "/images/product-gallon-19.svg",
+    image: "/images/products/cleo-galon-19L.png",
     popular: true,
     features: [
       "Paket lengkap: Galon Baru 19L + Isi Air Cleo",
@@ -223,7 +223,7 @@ export default function ProductSection() {
           {products.map((prod) => (
             <div
               key={prod.id}
-              className={`relative bg-white rounded-3xl p-6 sm:p-7 border transition-all duration-300 flex flex-col justify-between hover:shadow-2xl hover:shadow-sky-500/15 ${
+              className={`group relative bg-white rounded-3xl p-6 sm:p-7 border transition-all duration-300 flex flex-col justify-between hover:shadow-2xl hover:shadow-sky-500/15 hover:-translate-y-1 ${
                 prod.popular
                   ? "border-sky-400 ring-2 ring-sky-400/25 shadow-lg"
                   : "border-slate-200/90 shadow-xs hover:border-sky-300"
@@ -231,20 +231,21 @@ export default function ProductSection() {
             >
               {/* Popular Badge */}
               {prod.popular && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-linear-to-r from-sky-600 to-cyan-500 text-white text-[11px] font-bold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-md whitespace-nowrap">
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10 bg-linear-to-r from-sky-600 to-cyan-500 text-white text-[11px] font-bold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-md whitespace-nowrap">
                   Paling Banyak Dipesan
                 </div>
               )}
 
               <div>
                 {/* Product Image Preview */}
-                <div className="w-full h-48 sm:h-52 relative mb-5 flex items-center justify-center p-3 bg-linear-to-b from-sky-50/80 to-transparent rounded-2xl">
-                  <div className="relative w-full h-full transition-transform duration-300 hover:scale-105">
+                <div className="w-full h-56 sm:h-60 relative mb-5 flex items-center justify-center p-2.5 bg-white rounded-2xl border border-slate-100/90 shadow-xs overflow-hidden">
+                  <div className="relative w-full h-full transition-transform duration-500 ease-out group-hover:scale-105">
                     <Image
                       src={prod.image}
                       alt={prod.name}
                       fill
-                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-contain drop-shadow-xs"
                     />
                   </div>
                 </div>
