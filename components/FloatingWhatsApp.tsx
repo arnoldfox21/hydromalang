@@ -2,7 +2,11 @@
 
 import { useState, useEffect } from "react";
 
-export default function FloatingWhatsApp() {
+export default function FloatingWhatsApp({
+  waNumber = "62895702831600",
+}: {
+  waNumber?: string;
+}) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -32,7 +36,7 @@ export default function FloatingWhatsApp() {
 
       {/* WhatsApp Button */}
       <a
-        href="https://wa.me/62895702831600?text=Halo%20Hydro%20Malang,%20saya%20warga%20Graha%20Merjosari%20Asri%20ingin%20pesan%20air%20mineral%20Cleo."
+        href={`https://wa.me/${waNumber}?text=Halo%20Hydro%20Malang,%20saya%20warga%20Graha%20Merjosari%20Asri%20ingin%20pesan%20air%20mineral%20Cleo.`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Pesan Hydro Malang lewat WhatsApp"

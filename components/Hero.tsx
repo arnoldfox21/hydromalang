@@ -1,6 +1,12 @@
 import Image from "next/image";
 
-export default function Hero() {
+export default function Hero({
+  promoBadge = "Air Mineral Populer Resmi • Gratis Ongkir Graha Merjosari Asri",
+  shopeeUrl = "https://shopee.co.id/hydromalang",
+}: {
+  promoBadge?: string;
+  shopeeUrl?: string;
+}) {
   return (
     <section id="beranda" className="relative overflow-hidden pt-8 pb-16 lg:py-24 bg-linear-to-b from-sky-50 via-white to-sky-50/40">
       {/* Background Decorative Blur Orbs */}
@@ -15,7 +21,7 @@ export default function Hero() {
             {/* Tagline Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-semibold tracking-wide shadow-xs">
               <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Air Mineral Populer Resmi • Gratis Ongkir Graha Merjosari Asri</span>
+              <span>{promoBadge}</span>
             </div>
 
             {/* Main Headline */}
@@ -84,7 +90,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="https://shopee.co.id/hydromalang"
+                href={shopeeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm sm:text-base shadow-lg shadow-orange-500/25 transition-all text-center flex items-center justify-center gap-2 transform hover:-translate-y-0.5"

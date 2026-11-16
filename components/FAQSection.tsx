@@ -1,51 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { DEFAULT_FAQS } from "@/lib/defaults";
+import type { FAQItem } from "@/lib/types";
 
-const SHOPEE_URL = "https://shopee.co.id/hydromalang";
-
-interface FAQItem {
-  question: string;
-  answer: string;
-  shopeeLink?: boolean;
-}
-
-const faqs: FAQItem[] = [
-  {
-    question: "Bagaimana cara memesan air mineral di Hydro Malang?",
-    answer:
-      "Pemesanan sangat mudah! Bagi warga Perumahan Graha Merjosari Asri, Anda bisa langsung menekan tombol 'Pesan via WhatsApp' atau mengisi formulir pemesanan untuk pengantaran langsung bebas ongkir. Bagi Anda yang berada di luar Graha Merjosari, silakan pesan langsung melalui toko Shopee resmi kami.",
-    shopeeLink: true,
-  },
-  {
-    question: "Wilayah mana saja yang dijangkau dan bagaimana ketentuan gratis ongkirnya?",
-    answer:
-      "Pengantaran kurir kilat langsung 100% GRATIS ONGKIR berlaku khusus untuk warga Perumahan Graha Merjosari Asri (Cluster Melati, Anggrek, dan Lavender). Untuk seluruh wilayah lainnya di Kota Malang dan sekitarnya, pemesanan dilayani via Shopee dengan opsi kurir Instant, Same Day, maupun Reguler.",
-    shopeeLink: true,
-  },
-  {
-    question: "Merek air mineral apa saja yang dijual di Hydro Malang?",
-    answer:
-      "Kami menjual air minum mineral bermerek populer yang sudah terpercaya di Indonesia seperti Cleo, Club, dan lainnya. Saat ini, stok yang tersedia untuk dipesan adalah merek Cleo (tersedia kemasan galon 19L, 15L, 12.8L, dan kemasan kecil). Merek populer lainnya akan segera hadir bertahap.",
-  },
-  {
-    question: "Apakah produk Cleo yang dijual dijamin asli dan bersegel resmi?",
-    answer:
-      "Pasti! Seluruh produk Cleo yang kami sediakan dijamin 100% original, langsung dari jalur distribusi resmi pabrik, bersegel utuh dengan tutup resmi dan hologram pengaman. Bebas dari risiko kontaminasi dan pemalsuan.",
-  },
-  {
-    question: "Bagaimana jika saya belum memiliki galon sebelumnya?",
-    answer:
-      "Anda bisa memilih varian 'Cleo Air 19L + Galon' seharga Rp 50.000 yang sudah lengkap termasuk galon baru resmi 100% BPA-Free Food Grade plus isi air murni Cleo 19 Liter siap pakai di dispenser. Tersedia baik via pemesanan langsung maupun di Shopee.",
-  },
-  {
-    question: "Berapa lama estimasi pengantaran pesanan sampai di rumah?",
-    answer:
-      "Untuk warga Perumahan Graha Merjosari Asri, kurir standby sehingga pesanan tiba rata-rata dalam 10 - 20 menit setelah konfirmasi WhatsApp, dan kurir siap membantu angkat ke dispenser. Untuk pemesanan via Shopee di luar area, estimasi pengiriman disesuaikan dengan layanan pilihan Anda (Shopee Instant tiba dalam hitungan jam).",
-  },
-];
-
-export default function FAQSection() {
+export default function FAQSection({
+  faqs = DEFAULT_FAQS,
+  shopeeUrl = "https://shopee.co.id/hydromalang",
+}: {
+  faqs?: FAQItem[];
+  shopeeUrl?: string;
+}) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggle = (index: number) => {
@@ -99,10 +64,10 @@ export default function FAQSection() {
                 {isOpen && (
                   <div className="px-5 sm:px-6 pb-6 pt-2 bg-white text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100 animate-in fade-in-50 duration-200 space-y-3">
                     <p>{faq.answer}</p>
-                    {faq.shopeeLink && (
+                    {faq.shopee_link && (
                       <div className="pt-1">
                         <a
-                          href={SHOPEE_URL}
+                          href={shopeeUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-600 hover:text-orange-700 hover:underline bg-orange-50 px-3 py-1.5 rounded-lg border border-orange-200"
@@ -142,7 +107,7 @@ export default function FAQSection() {
               </svg>
             </a>
             <a
-              href={SHOPEE_URL}
+              href={shopeeUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-orange-500 text-white text-sm font-bold shadow-md hover:bg-orange-600 transition-all"

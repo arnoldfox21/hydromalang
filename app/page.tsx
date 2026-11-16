@@ -9,22 +9,36 @@ import OrderForm from "@/components/OrderForm";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import { getSiteData } from "@/lib/data";
 
-export default function Home() {
+export const revalidate = 60;
+
+export default async function Home() {
+  const { products, brands, settings, coverageAreas, faqs } =
+    await getSiteData();
+
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-900 selection:bg-sky-500 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-white text-slate-900 overflow-x-clip selection:bg-sky-500 selection:text-white">
       {/* Header / Navigation */}
-      <Navbar />
+      <Navbar waNumber={settings.wa_number} shopeeUrl={settings.shopee_url} />
 
       <main className="flex-1">
         {/* Hero Section */}
-        <Hero />
+        <Hero
+          promoBadge={settings.promo_badge}
+          shopeeUrl={settings.shopee_url}
+        />
 
         {/* Keunggulan & Kualitas Hydro Malang */}
         <QualityFeatures />
 
         {/* Katalog Produk & Harga */}
-        <ProductSection />
+        <ProductSection
+          products={products}
+          brands={brands}
+          waNumber={settings.wa_number}
+          shopeeUrl={settings.shopee_url}
+        />
 
         {/* Kalkulator Kebutuhan Air Minum Interaktif */}
         <WaterCalculator />
@@ -33,20 +47,27 @@ export default function Home() {
         <PurificationProcess />
 
         {/* Jangkauan Area Antar Malang Raya */}
-        <CoverageArea />
+        <CoverageArea
+          coverageAreas={coverageAreas}
+          shopeeUrl={settings.shopee_url}
+        />
 
         {/* Formulir Pemesanan Cepat WA */}
-        <OrderForm />
+        <OrderForm
+          products={products}
+          waNumber={settings.wa_number}
+          shopeeUrl={settings.shopee_url}
+        />
 
         {/* FAQ - Pertanyaan Umum */}
-        <FAQSection />
+        <FAQSection faqs={faqs} shopeeUrl={settings.shopee_url} />
       </main>
 
       {/* Footer */}
-      <Footer />
+      <Footer products={products} settings={settings} />
 
       {/* Persistent Floating WhatsApp Button */}
-      <FloatingWhatsApp />
+      <FloatingWhatsApp waNumber={settings.wa_number} />
     </div>
   );
 }

@@ -1,42 +1,28 @@
 import Image from "next/image";
+import { DEFAULT_COVERAGE_AREAS } from "@/lib/defaults";
+import type { CoverageAreaItem } from "@/lib/types";
 
-const SHOPEE_URL = "https://shopee.co.id/hydromalang";
-
-export default function CoverageArea() {
+export default function CoverageArea({
+  coverageAreas = DEFAULT_COVERAGE_AREAS,
+  shopeeUrl = "https://shopee.co.id/hydromalang",
+}: {
+  coverageAreas?: CoverageAreaItem[];
+  shopeeUrl?: string;
+}) {
+  const primary =
+    coverageAreas.find((a) => a.is_primary) || DEFAULT_COVERAGE_AREAS[0];
   const activeRegion = {
-    name: "Perumahan Graha Merjosari Asri (Aktif)",
-    subAreas: [
-      "Cluster Melati",
-      "Cluster Anggrek",
-      "Cluster Lavender",
-    ],
-    estimate: "10 - 20 Menit",
-    status: "TERSEDIA SEKARANG",
-    badge: "100% GRATIS ONGKIR",
+    name: primary.name,
+    subAreas:
+      primary.sub_areas && primary.sub_areas.length > 0
+        ? primary.sub_areas
+        : ["Cluster Melati", "Cluster Anggrek", "Cluster Lavender"],
+    estimate: primary.estimate || "10 - 20 Menit",
+    status: primary.status || "TERSEDIA SEKARANG",
+    badge: primary.badge || "100% GRATIS ONGKIR",
   };
 
-  const shopeeRegions = [
-    {
-      name: "Area Merjosari Lainnya",
-      note: "Joyo Grand, Bukit Tidar, Dinoyo Asri, Joyo Utomo & sekitarnya",
-      status: "Bisa via Shopee",
-    },
-    {
-      name: "Lowokwaru & Tlogomas",
-      note: "Dinoyo, Tlogomas, Jatimulyo, Tunggulwulung",
-      status: "Bisa via Shopee",
-    },
-    {
-      name: "Suhat & Klojen",
-      note: "Jl. Soekarno Hatta, Oro-oro Dowo, Kauman, Rampal",
-      status: "Bisa via Shopee",
-    },
-    {
-      name: "Blimbing, Sukun & Seluruh Malang",
-      note: "Sawojajar, Arjosari, Pandanwangi, Kebonsari",
-      status: "Bisa via Shopee",
-    },
-  ];
+  const shopeeRegions = coverageAreas.filter((a) => !a.is_primary);
 
   return (
     <section id="wilayah" className="py-20 bg-slate-50 relative overflow-hidden">
@@ -105,7 +91,7 @@ export default function CoverageArea() {
                   <span>Wilayah Lainnya (Bisa Pesan via Shopee)</span>
                 </span>
                 <a
-                  href={SHOPEE_URL}
+                  href={shopeeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs font-bold text-orange-600 hover:text-orange-700 hover:underline flex items-center gap-1"
@@ -121,7 +107,7 @@ export default function CoverageArea() {
                 {shopeeRegions.map((reg, idx) => (
                   <a
                     key={idx}
-                    href={SHOPEE_URL}
+                    href={shopeeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-orange-300 hover:shadow-md transition-all group block"
@@ -199,7 +185,7 @@ export default function CoverageArea() {
                 </a>
 
                 <a
-                  href={SHOPEE_URL}
+                  href={shopeeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 px-4 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 font-bold text-xs sm:text-sm border border-orange-200 transition-all flex items-center justify-center gap-2"

@@ -16,8 +16,15 @@ const navLinks = [
   { name: "FAQ", href: "#faq" },
 ];
 
-export default function Navbar() {
+export default function Navbar({
+  waNumber = "62895702831600",
+  shopeeUrl = SHOPEE_URL,
+}: {
+  waNumber?: string;
+  shopeeUrl?: string;
+}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const waHref = `https://wa.me/${waNumber}?text=Halo%20Hydro%20Malang,%20saya%20warga%20Graha%20Merjosari%20Asri%20ingin%20pesan%20air%20mineral%20Cleo.`;
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-sky-100 shadow-xs transition-all">
@@ -53,7 +60,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-2.5">
             <a
-              href={SHOPEE_URL}
+              href={shopeeUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-orange-50 hover:bg-orange-100 text-orange-700 font-bold text-xs border border-orange-200 transition-colors"
@@ -65,7 +72,7 @@ export default function Navbar() {
             </a>
 
             <a
-              href="https://wa.me/62895702831600?text=Halo%20Hydro%20Malang,%20saya%20warga%20Graha%20Merjosari%20Asri%20ingin%20pesan%20air%20mineral%20Cleo."
+              href={waHref}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-linear-to-r from-sky-600 to-cyan-500 text-white font-medium text-xs sm:text-sm shadow-md shadow-sky-500/20 hover:from-sky-500 hover:to-cyan-400 hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0"
@@ -116,7 +123,7 @@ export default function Navbar() {
           ))}
           <div className="pt-3 border-t border-slate-100 space-y-2">
             <a
-              href={SHOPEE_URL}
+              href={shopeeUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
@@ -129,7 +136,7 @@ export default function Navbar() {
             </a>
 
             <a
-              href="https://wa.me/62895702831600?text=Halo%20Hydro%20Malang,%20saya%20warga%20Graha%20Merjosari%20Asri%20ingin%20pesan%20air%20mineral%20Cleo."
+              href={waHref}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}

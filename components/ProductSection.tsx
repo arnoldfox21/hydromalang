@@ -1,147 +1,27 @@
 "use client";
 
 import Image from "next/image";
+import {
+  DEFAULT_BRANDS,
+  DEFAULT_PRODUCTS,
+  formatRupiah,
+} from "@/lib/defaults";
+import type { Brand, Product } from "@/lib/types";
 
-interface Product {
-  id: string;
-  name: string;
-  brand: string;
-  price: string;
-  unit: string;
-  badge: string;
-  description: string;
-  image: string;
-  popular?: boolean;
-  features: string[];
-  waText: string;
-}
+const DEFAULT_WA_NUMBER = "62895702831600";
+const DEFAULT_SHOPEE_URL = "https://shopee.co.id/hydromalang";
 
-const WA_NUMBER = "62895702831600";
-const SHOPEE_URL = "https://shopee.co.id/hydromalang";
-
-const popularBrands = [
-  {
-    name: "Cleo Pure Water",
-    status: "Tersedia Sekarang",
-    available: true,
-    desc: "Air murni demineral bebas bromat dengan teknologi nano filter modern.",
-    badgeColor: "bg-emerald-500 text-white",
-  },
-  {
-    name: "Club",
-    status: "Segera Hadir",
-    available: false,
-    desc: "Air mineral pegunungan pilihan keluarga Indonesia.",
-    badgeColor: "bg-slate-200 text-slate-700",
-  },
-  {
-    name: "Aqua",
-    status: "Segera Hadir",
-    available: false,
-    desc: "Air mineral legendaris dari sumber mata air alami pilihan.",
-    badgeColor: "bg-slate-200 text-slate-700",
-  },
-  {
-    name: "Le Minerale",
-    status: "Segera Hadir",
-    available: false,
-    desc: "Air mineral alami dengan kandungan mineral esensial seimbang.",
-    badgeColor: "bg-slate-200 text-slate-700",
-  },
-];
-
-const products: Product[] = [
-  {
-    id: "cleo-kecil",
-    name: "Cleo Air Mineral Kecil",
-    brand: "Cleo",
-    price: "Rp 20.000",
-    unit: "/ paket",
-    badge: "Cleo • Praktis & Higienis",
-    description:
-      "Air mineral murni Cleo kemasan kecil yang higienis dan praktis. Sangat pas untuk kebutuhan tamu, bekal harian, rapat, atau acara keluarga.",
-    image: "/images/products/cleo-220ml.jpeg",
-    popular: false,
-    features: [
-      "Produk Cleo resmi 100% bersegel pabrik",
-      "Air demineral murni bebas zat anorganik",
-      "Kemasan ergonomis praktis disajikan",
-      "Segel higienis anti-bocor standar pabrik",
-      "Cocok untuk konsumsi tamu & keluarga",
-    ],
-    waText: `Halo Hydro Malang, saya warga Graha Merjosari Asri ingin pesan *Cleo Air Mineral Kecil* (Rp 20.000).
-
-Mohon konfirmasi ketersediaan dan pengantaran ke rumah saya. Terima kasih!`,
-  },
-  {
-    id: "cleo-12-8l",
-    name: "Cleo Air 12.8L",
-    brand: "Cleo",
-    price: "Rp 19.000",
-    unit: "/ galon",
-    badge: "Cleo • Slim & Ringan",
-    description:
-      "Galon Cleo ukuran 12.8 Liter ukuran slim yang ringan dan hemat tempat. Solusi tepat agar mudah diangkat dan dipasang langsung ke dispenser.",
-    image: "/images/products/cleo-12L.jpeg",
-    popular: false,
-    features: [
-      "Volume 12.8 Liter ramah dispenser",
-      "Bobot lebih ringan, mudah diangkat",
-      "Air murni Cleo berstandar nano filter",
-      "Segel resmi ganda dari pabrik Cleo",
-      "Hemat biaya untuk konsumsi harian",
-    ],
-    waText: `Halo Hydro Malang, saya warga Graha Merjosari Asri ingin pesan *Cleo Air 12.8L* (Rp 19.000).
-
-Mohon konfirmasi ketersediaan dan pengantaran ke rumah saya. Terima kasih!`,
-  },
-  {
-    id: "cleo-15l",
-    name: "Cleo Air 15L",
-    brand: "Cleo",
-    price: "Rp 20.000",
-    unit: "/ galon",
-    badge: "Cleo • Paling Favorit",
-    description:
-      "Kemasan galon Cleo 15 Liter dengan kapasitas pas untuk konsumsi keluarga mingguan. Menghadirkan kesegaran air murni dengan harga ekonomis.",
-    image: "/images/products/cleo-15L.jpeg",
-    popular: true,
-    features: [
-      "Kapasitas 15 Liter pas & hemat",
-      "Kemurnian Cleo bebas bromat & klorin",
-      "Rasa segar alami dan ringan diminum",
-      "Galon bersih higienis standar Cleo",
-      "Pilihan terlaris warga Graha Merjosari Asri",
-    ],
-    waText: `Halo Hydro Malang, saya warga Graha Merjosari Asri ingin pesan *Cleo Air 15L* (Rp 20.000).
-
-Mohon konfirmasi ketersediaan dan pengantaran ke rumah saya. Terima kasih!`,
-  },
-  {
-    id: "cleo-19l-galon",
-    name: "Cleo Air 19L + Galon",
-    brand: "Cleo",
-    price: "Rp 50.000",
-    unit: "/ paket perdana",
-    badge: "Cleo • Paket Komplit",
-    description:
-      "Paket perdana siap pakai: sudah termasuk galon baru resmi 19 Liter berkualitas Food Grade BPA-Free, terisi penuh air murni Cleo siap pasang.",
-    image: "/images/products/cleo-galon-19L.png",
-    popular: true,
-    features: [
-      "Paket lengkap: Galon Baru 19L + Isi Air Cleo",
-      "Bahan tebal Food-Grade & 100% BPA-Free",
-      "Segel pengaman hologram resmi pabrik",
-      "Dapat ditukar/diisi ulang pesanan berikutnya",
-      "Langsung siap pasang di dispenser Anda",
-    ],
-    waText: `Halo Hydro Malang, saya warga Graha Merjosari Asri ingin pesan *Cleo Air 19L + Galon* (Rp 50.000).
-
-Mohon konfirmasi ketersediaan dan pengantaran ke rumah saya. Terima kasih!`,
-  },
-];
-
-export default function ProductSection() {
+export default function ProductSection({
+  products = DEFAULT_PRODUCTS,
+  brands = DEFAULT_BRANDS,
+  waNumber = DEFAULT_WA_NUMBER,
+  shopeeUrl = DEFAULT_SHOPEE_URL,
+}: {
+  products?: Product[];
+  brands?: Brand[];
+  waNumber?: string;
+  shopeeUrl?: string;
+}) {
   return (
     <section id="produk" className="py-20 bg-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -177,7 +57,7 @@ export default function ProductSection() {
                 📍 Graha Merjosari: Kurir Langsung
               </span>
               <a
-                href={SHOPEE_URL}
+                href={shopeeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs text-orange-700 bg-orange-50 hover:bg-orange-100 px-3 py-1.5 rounded-xl border border-orange-200 font-bold flex items-center gap-1 transition-colors"
@@ -191,16 +71,16 @@ export default function ProductSection() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 pt-4">
-            {popularBrands.map((brand, idx) => (
+            {brands.map((brand) => (
               <div
-                key={idx}
+                key={brand.id}
                 className={`p-3.5 rounded-2xl border transition-all ${
                   brand.available
                     ? "bg-emerald-50/60 border-emerald-300 ring-2 ring-emerald-400/20"
                     : "bg-slate-50/70 border-slate-200 opacity-75"
                 }`}
               >
-                <div className="flex items-center justify-between gap-1 mb-1.5">
+                <div className="flex flex-wrap items-center justify-between gap-1.5 mb-1.5">
                   <h4 className="text-sm font-bold text-slate-900">{brand.name}</h4>
                   <span
                     className={`text-[10px] font-extrabold px-2 py-0.5 rounded-full ${
@@ -212,7 +92,7 @@ export default function ProductSection() {
                     {brand.status}
                   </span>
                 </div>
-                <p className="text-[11px] text-slate-500 leading-snug">{brand.desc}</p>
+                <p className="text-[11px] text-slate-500 leading-snug">{brand.description}</p>
               </div>
             ))}
           </div>
@@ -264,13 +144,20 @@ export default function ProductSection() {
                 </div>
 
                 {/* Price */}
-                <div className="mt-4 pb-4 border-b border-slate-100 flex items-baseline gap-1.5">
-                  <span className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-                    {prod.price}
-                  </span>
-                  <span className="text-xs font-semibold text-slate-500">
-                    {prod.unit}
-                  </span>
+                <div className="mt-4 pb-4 border-b border-slate-100 flex items-baseline justify-between gap-2">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                      {formatRupiah(prod.price)}
+                    </span>
+                    <span className="text-xs font-semibold text-slate-500">
+                      {prod.unit}
+                    </span>
+                  </div>
+                  {!prod.in_stock && (
+                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-rose-100 text-rose-700">
+                      Stok Habis
+                    </span>
+                  )}
                 </div>
 
                 {/* Features List */}
@@ -297,29 +184,38 @@ export default function ProductSection() {
               {/* Action Buttons: WhatsApp & Shopee */}
               <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                 {/* Primary: WhatsApp for Graha Merjosari Asri */}
-                <a
-                  href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(prod.waText)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`w-full py-2.5 px-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-xs ${
-                    prod.popular
-                      ? "bg-linear-to-r from-emerald-600 to-teal-500 text-white hover:from-emerald-500 hover:to-teal-400 shadow-emerald-500/20"
-                      : "bg-sky-600 hover:bg-sky-500 text-white shadow-sky-500/20"
-                  } hover:-translate-y-0.5 active:translate-y-0`}
-                >
-                  <svg
-                    className="w-4 h-4 fill-current shrink-0"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
+                {prod.in_stock ? (
+                  <a
+                    href={`https://wa.me/${waNumber}?text=${encodeURIComponent(
+                      prod.wa_text ||
+                        `Halo Hydro Malang, saya ingin pesan *${prod.name}* (${formatRupiah(prod.price)}).`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-full py-2.5 px-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-xs ${
+                      prod.popular
+                        ? "bg-linear-to-r from-emerald-600 to-teal-500 text-white hover:from-emerald-500 hover:to-teal-400 shadow-emerald-500/20"
+                        : "bg-sky-600 hover:bg-sky-500 text-white shadow-sky-500/20"
+                    } hover:-translate-y-0.5 active:translate-y-0`}
                   >
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                  </svg>
-                  <span>Pesan via WA (Graha Merjosari)</span>
-                </a>
+                    <svg
+                      className="w-4 h-4 fill-current shrink-0"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                    <span>Pesan via WA (Graha Merjosari)</span>
+                  </a>
+                ) : (
+                  <div className="w-full py-2.5 px-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center bg-slate-100 text-slate-400 cursor-not-allowed">
+                    Stok Sedang Kosong
+                  </div>
+                )}
 
                 {/* Secondary: Shopee */}
                 <a
-                  href={SHOPEE_URL}
+                  href={shopeeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-2 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 bg-orange-50 hover:bg-orange-100 text-orange-700 border border-orange-200 transition-colors"

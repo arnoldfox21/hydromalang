@@ -1,16 +1,29 @@
 "use client";
 
 import { useState } from "react";
+import { DEFAULT_PRODUCTS, formatRupiah } from "@/lib/defaults";
+import type { Product } from "@/lib/types";
 
-const WA_NUMBER = "62895702831600";
-const SHOPEE_URL = "https://shopee.co.id/hydromalang";
+export default function OrderForm({
+  products = DEFAULT_PRODUCTS,
+  waNumber = "62895702831600",
+  shopeeUrl = "https://shopee.co.id/hydromalang",
+}: {
+  products?: Product[];
+  waNumber?: string;
+  shopeeUrl?: string;
+}) {
+  const availableProducts = products.filter((p) => p.in_stock);
+  const productOptions = availableProducts.length > 0 ? availableProducts : products;
+  const defaultProductLabel = productOptions[0]
+    ? `${productOptions[0].name} - ${formatRupiah(productOptions[0].price)}`
+    : "Cleo Air 15L - Rp 20.000";
 
-export default function OrderForm() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [area, setArea] = useState<"graha_merjosari_asri" | "other">("graha_merjosari_asri");
   const [address, setAddress] = useState("");
-  const [product, setProduct] = useState("Cleo Air 15L - Rp 20.000");
+  const [product, setProduct] = useState(defaultProductLabel);
   const [quantity, setQuantity] = useState(2);
   const [deliveryTime, setDeliveryTime] = useState("Hari Ini - Segera (Prioritas)");
   const [notes, setNotes] = useState("");
@@ -20,7 +33,7 @@ export default function OrderForm() {
 
     if (area === "other") {
       // Direct to Shopee for external areas
-      window.open(SHOPEE_URL, "_blank");
+      window.open(shopeeUrl, "_blank");
       return;
     }
 
@@ -38,7 +51,7 @@ export default function OrderForm() {
 Mohon konfirmasi ketersediaan & jadwal pengantaran. Terima kasih!`;
 
     const encoded = encodeURIComponent(message);
-    window.open(`https://wa.me/${WA_NUMBER}?text=${encoded}`, "_blank");
+    window.open(`https://wa.me/${waNumber}?text=${encoded}`, "_blank");
   };
 
   return (
@@ -84,7 +97,7 @@ Mohon konfirmasi ketersediaan & jadwal pengantaran. Terima kasih!`;
                 <div>
                   <div className="text-xs text-slate-400">Toko Online Shopee:</div>
                   <a
-                    href={SHOPEE_URL}
+                    href={shopeeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm font-bold text-orange-400 hover:text-orange-300 underline flex items-center gap-1"
@@ -228,7 +241,7 @@ Mohon konfirmasi ketersediaan & jadwal pengantaran. Terima kasih!`;
 
                   {/* Primary Button: Open Shopee */}
                   <a
-                    href={SHOPEE_URL}
+                    href={shopeeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full py-4 px-6 rounded-xl font-bold text-base shadow-lg shadow-orange-500/25 bg-linear-to-r from-orange-600 via-orange-500 to-amber-500 hover:from-orange-500 hover:to-amber-400 text-white transition-all flex items-center justify-center gap-2.5 transform hover:-translate-y-0.5 active:translate-y-0"
@@ -248,7 +261,7 @@ Mohon konfirmasi ketersediaan & jadwal pengantaran. Terima kasih!`;
                       Ingin pesan dalam jumlah banyak (partai/acara) atau butuh bantuan order?
                     </p>
                     <a
-                      href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Halo Admin Hydro Malang, saya ingin bertanya pemesanan di luar Graha Merjosari Asri / info toko Shopee.")}`}
+                      href={`https://wa.me/${waNumber}?text=${encodeURIComponent("Halo Admin Hydro Malang, saya ingin bertanya pemesanan di luar Graha Merjosari Asri / info toko Shopee.")}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-xs font-bold text-sky-600 hover:text-sky-700 hover:underline"
@@ -317,18 +330,14 @@ Mohon konfirmasi ketersediaan & jadwal pengantaran. Terima kasih!`;
                       onChange={(e) => setProduct(e.target.value)}
                       className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-hidden focus:ring-2 focus:ring-sky-500 focus:border-transparent bg-white transition-all font-medium text-slate-800"
                     >
-                      <option value="Cleo Air Mineral Kecil - Rp 20.000">
-                        Cleo Air Mineral Kecil - Rp 20.000
-                      </option>
-                      <option value="Cleo Air 12.8L - Rp 19.000">
-                        Cleo Air 12.8L (Galon Slim) - Rp 19.000
-                      </option>
-                      <option value="Cleo Air 15L - Rp 20.000">
-                        Cleo Air 15L (Galon Favorit) - Rp 20.000
-                      </option>
-                      <option value="Cleo Air 19L + Galon - Rp 50.000">
-                        Cleo Air 19L + Galon Baru (Komplit) - Rp 50.000
-                      </option>
+                      {productOptions.map((prod) => {
+                        const label = `${prod.name} - ${formatRupiah(prod.price)}`;
+                        return (
+                          <option key={prod.id} value={label}>
+                            {label}
+                          </option>
+                        );
+                      })}
                     </select>
                   </div>
 
