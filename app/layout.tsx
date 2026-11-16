@@ -22,8 +22,17 @@ export const metadata: Metadata = {
     "gratis ongkir Graha Merjosari Asri",
   ],
   icons: {
-    icon: "/logo.png",
+    icon: [
+      { url: "/images/favicon/favicon.ico", sizes: "any" },
+      { url: "/images/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/images/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: "/images/favicon/favicon.ico",
+    apple: [
+      { url: "/images/favicon/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
+  manifest: "/images/favicon/site.webmanifest",
   openGraph: {
     title: "Hydro Malang - Air Mineral Alami Pegunungan",
     description:
