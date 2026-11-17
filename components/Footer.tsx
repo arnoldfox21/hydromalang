@@ -60,28 +60,23 @@ export default function Footer({
                 </a>
               </li>
               <li>
-                <a href="#keunggulan" className="hover:text-cyan-400 transition-colors">
-                  Keunggulan
-                </a>
-              </li>
-              <li>
                 <a href="#produk" className="hover:text-cyan-400 transition-colors">
                   Produk &amp; Harga
                 </a>
               </li>
               <li>
-                <a href="#proses" className="hover:text-cyan-400 transition-colors">
-                  Standar Mutu
-                </a>
-              </li>
-              <li>
-                <a href="#kalkulator" className="hover:text-cyan-400 transition-colors">
-                  Kalkulator Kebutuhan
+                <a href="#kualitas" className="hover:text-cyan-400 transition-colors">
+                  Kualitas &amp; Kalkulator
                 </a>
               </li>
               <li>
                 <a href="#wilayah" className="hover:text-cyan-400 transition-colors">
-                  Wilayah Antar &amp; Shopee
+                  Cara Pesan &amp; Wilayah
+                </a>
+              </li>
+              <li>
+                <a href="#faq" className="hover:text-cyan-400 transition-colors">
+                  FAQ
                 </a>
               </li>
             </ul>

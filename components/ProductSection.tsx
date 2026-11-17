@@ -7,6 +7,7 @@ import {
   formatRupiah,
 } from "@/lib/defaults";
 import type { Brand, Product } from "@/lib/types";
+import { useOrderCart } from "./OrderCartContext";
 
 const DEFAULT_WA_NUMBER = "62895702831600";
 const DEFAULT_SHOPEE_URL = "https://shopee.co.id/hydromalang";
@@ -22,220 +23,226 @@ export default function ProductSection({
   waNumber?: string;
   shopeeUrl?: string;
 }) {
+  const { items, addItem, deliveryArea, setDeliveryArea } = useOrderCart();
+
   return (
-    <section id="produk" className="py-20 bg-slate-50 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="text-xs sm:text-sm font-bold tracking-widest text-sky-600 uppercase bg-sky-100/70 px-3.5 py-1.5 rounded-full border border-sky-200">
-            Brand Populer Resmi &amp; Harga Transparan
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Pilihan Air Minum Mineral Populer di <span className="text-sky-600">Hydro Malang</span>
-          </h2>
-          <p className="text-base text-slate-600 leading-relaxed">
-            Menyediakan air minum mineral bermerek populer seperti <strong>Cleo, Club, dan lainnya</strong> (stok ready: <strong>Cleo</strong>). Warga Graha Merjosari Asri bisa pesan via WA kurir kilat, sedangkan wilayah lainnya dapat pesan via <strong>Shopee</strong>!
-          </p>
-        </div>
-
-        {/* Brand Status Tracker Banner */}
-        <div className="mt-10 p-6 rounded-3xl bg-white border border-sky-100 shadow-sm">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-4 border-b border-slate-100">
-            <div>
-              <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
-                <span>Katalog Merek Air Mineral</span>
-                <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
-                  Ready: Cleo
-                </span>
-              </h3>
-              <p className="text-xs text-slate-500 mt-0.5">
-                Merek populer lainnya seperti Club sedang dipersiapkan dan segera hadir bertahap.
-              </p>
-            </div>
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-200 font-semibold">
-                📍 Graha Merjosari: Kurir Langsung
-              </span>
-              <a
-                href={shopeeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-orange-700 bg-orange-50 hover:bg-orange-100 px-3 py-1.5 rounded-xl border border-orange-200 font-bold flex items-center gap-1 transition-colors"
-              >
-                <span>🛍️ Luar Area: Buka Shopee</span>
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
+    <section id="produk" className="py-16 sm:py-20 bg-slate-50/70 border-y border-slate-100">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header + Area Switcher */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+          <div className="space-y-2 max-w-xl">
+            <span className="text-xs font-bold tracking-wider text-sky-600 uppercase">
+              Katalog Produk &amp; Harga Resmi
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+              Pilih Varian Air Mineral Cleo
+            </h2>
+            <p className="text-sm text-slate-600">
+              Harga transparan, 100% segel pabrik. Tambahkan varian ke pesanan Anda atau pesan langsung via Shopee.
+            </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 pt-4">
-            {brands.map((brand) => (
-              <div
-                key={brand.id}
-                className={`p-3.5 rounded-2xl border transition-all ${
-                  brand.available
-                    ? "bg-emerald-50/60 border-emerald-300 ring-2 ring-emerald-400/20"
-                    : "bg-slate-50/70 border-slate-200 opacity-75"
-                }`}
-              >
-                <div className="flex flex-wrap items-center justify-between gap-1.5 mb-1.5">
-                  <h4 className="text-sm font-bold text-slate-900">{brand.name}</h4>
-                  <span
-                    className={`text-[10px] font-extrabold px-2 py-0.5 rounded-full ${
-                      brand.available
-                        ? "bg-emerald-600 text-white"
-                        : "bg-amber-100 text-amber-800"
-                    }`}
-                  >
-                    {brand.status}
-                  </span>
-                </div>
-                <p className="text-[11px] text-slate-500 leading-snug">{brand.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* 4 Products Grid (Cleo Ready) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-12">
-          {products.map((prod) => (
-            <div
-              key={prod.id}
-              className={`group relative bg-white rounded-3xl p-6 sm:p-7 border transition-all duration-300 flex flex-col justify-between hover:shadow-2xl hover:shadow-sky-500/15 hover:-translate-y-1 ${
-                prod.popular
-                  ? "border-sky-400 ring-2 ring-sky-400/25 shadow-lg"
-                  : "border-slate-200/90 shadow-xs hover:border-sky-300"
+          {/* Delivery Mode Toggle */}
+          <div className="inline-flex p-1 rounded-xl bg-white border border-slate-200 shadow-2xs self-start md:self-auto">
+            <button
+              type="button"
+              onClick={() => setDeliveryArea("graha_merjosari_asri")}
+              className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
+                deliveryArea === "graha_merjosari_asri"
+                  ? "bg-emerald-600 text-white"
+                  : "text-slate-600 hover:text-slate-900"
               }`}
             >
-              {/* Popular Badge */}
-              {prod.popular && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10 bg-linear-to-r from-sky-600 to-cyan-500 text-white text-[11px] font-bold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-md whitespace-nowrap">
-                  Paling Banyak Dipesan
-                </div>
-              )}
+              Graha Merjosari (Gratis Ongkir)
+            </button>
+            <button
+              type="button"
+              onClick={() => setDeliveryArea("other")}
+              className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
+                deliveryArea === "other"
+                  ? "bg-orange-500 text-white"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              Luar Area (Shopee)
+            </button>
+          </div>
+        </div>
 
-              <div>
-                {/* Product Image Preview */}
-                <div className="w-full h-56 sm:h-60 relative mb-5 flex items-center justify-center p-2.5 bg-white rounded-2xl border border-slate-100/90 shadow-xs overflow-hidden">
-                  <div className="relative w-full h-full transition-transform duration-500 ease-out group-hover:scale-105">
+        {/* Compact Brand Status Strip */}
+        <div className="mb-8 px-4 py-3 rounded-2xl bg-white border border-slate-200/80 flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center gap-2 text-xs">
+            <span className="font-bold text-slate-700 mr-1">Merek:</span>
+            {brands.map((brand) => (
+              <span
+                key={brand.id}
+                className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-semibold ${
+                  brand.available
+                    ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                    : "bg-slate-100 text-slate-500"
+                }`}
+              >
+                {brand.available && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                )}
+                <span>{brand.name}</span>
+                {!brand.available && (
+                  <span className="text-[10px] text-slate-400">({brand.status})</span>
+                )}
+              </span>
+            ))}
+          </div>
+          <span className="text-xs text-slate-500">
+            CS WhatsApp: <strong className="text-slate-800">{waNumber.replace(/^62/, "0")}</strong>
+          </span>
+        </div>
+
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          {products.map((prod) => {
+            const qty = items[prod.id] || 0;
+
+            return (
+              <div
+                key={prod.id}
+                className={`group relative bg-white rounded-2xl p-5 border transition-all duration-200 flex flex-col justify-between ${
+                  qty > 0
+                    ? "border-emerald-500 ring-2 ring-emerald-500/15 shadow-md"
+                    : prod.popular
+                    ? "border-sky-300 shadow-sm"
+                    : "border-slate-200/90 hover:border-sky-300 hover:shadow-md"
+                }`}
+              >
+                {prod.popular && (
+                  <span className="absolute -top-2.5 left-4 bg-sky-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                    Terlaris
+                  </span>
+                )}
+
+                <div>
+                  {/* Product Image */}
+                  <div className="w-full h-44 relative mb-4 flex items-center justify-center p-2 bg-slate-50/70 rounded-xl overflow-hidden">
                     <Image
                       src={prod.image}
                       alt={prod.name}
                       fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-contain drop-shadow-xs"
+                      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 23vw"
+                      className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
-                </div>
 
-                {/* Badge & Title */}
-                <div className="space-y-1.5">
-                  <span className="inline-block text-[11px] font-bold text-sky-700 bg-sky-100/70 px-2.5 py-0.5 rounded-full">
-                    {prod.badge}
-                  </span>
-                  <h3 className="text-xl font-bold text-slate-900">
-                    {prod.name}
-                  </h3>
-                  <p className="text-xs text-slate-500 leading-relaxed min-h-[48px]">
-                    {prod.description}
-                  </p>
-                </div>
-
-                {/* Price */}
-                <div className="mt-4 pb-4 border-b border-slate-100 flex items-baseline justify-between gap-2">
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-                      {formatRupiah(prod.price)}
+                  {/* Title & Badge */}
+                  <div className="space-y-1">
+                    <span className="inline-block text-[11px] font-semibold text-sky-700 bg-sky-50 px-2 py-0.5 rounded-md">
+                      {prod.badge}
                     </span>
-                    <span className="text-xs font-semibold text-slate-500">
-                      {prod.unit}
-                    </span>
+                    <h3 className="text-lg font-bold text-slate-900 leading-snug">
+                      {prod.name}
+                    </h3>
+                    <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                      {prod.description}
+                    </p>
                   </div>
-                  {!prod.in_stock && (
-                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-rose-100 text-rose-700">
-                      Stok Habis
-                    </span>
+
+                  {/* Price */}
+                  <div className="mt-4 pt-3 border-t border-slate-100 flex items-baseline justify-between gap-2">
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-xl font-extrabold text-slate-900">
+                        {formatRupiah(prod.price)}
+                      </span>
+                      <span className="text-xs text-slate-500 font-medium">
+                        {prod.unit}
+                      </span>
+                    </div>
+                    {!prod.in_stock && (
+                      <span className="text-[11px] font-bold px-2 py-0.5 rounded-md bg-rose-50 text-rose-600">
+                        Habis
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Top 2 concise highlights */}
+                  {prod.features && prod.features.length > 0 && (
+                    <ul className="mt-3 space-y-1">
+                      {prod.features.slice(0, 2).map((feat, i) => (
+                        <li
+                          key={i}
+                          className="flex items-start gap-1.5 text-[11px] text-slate-600"
+                        >
+                          <svg
+                            className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                          <span className="leading-tight">{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
                   )}
                 </div>
 
-                {/* Features List */}
-                <div className="mt-4 space-y-2">
-                  {prod.features.map((feat, i) => (
-                    <div key={i} className="flex items-start gap-2 text-xs text-slate-600">
-                      <svg
-                        className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
+                {/* Action Footer */}
+                <div className="mt-5 pt-3 border-t border-slate-100">
+                  {deliveryArea === "other" ? (
+                    <a
+                      href={shopeeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-2.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 bg-orange-500 hover:bg-orange-600 text-white transition-colors"
+                    >
+                      <span>Beli via Shopee</span>
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
-                      <span className="leading-tight">{feat}</span>
+                    </a>
+                  ) : !prod.in_stock ? (
+                    <div className="w-full py-2.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center bg-slate-100 text-slate-400 cursor-not-allowed">
+                      Stok Kosong
                     </div>
-                  ))}
+                  ) : qty === 0 ? (
+                    <button
+                      type="button"
+                      onClick={() => addItem(prod.id, 1)}
+                      className="w-full py-2.5 px-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 bg-sky-600 hover:bg-sky-500 text-white transition-colors cursor-pointer"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" />
+                      </svg>
+                      <span>Tambah ke Pesanan</span>
+                    </button>
+                  ) : (
+                    <div className="flex items-center justify-between gap-2 bg-emerald-50 border border-emerald-200 rounded-xl p-1">
+                      <button
+                        type="button"
+                        onClick={() => addItem(prod.id, -1)}
+                        aria-label={`Kurangi ${prod.name}`}
+                        className="w-8 h-8 rounded-lg bg-white text-slate-700 hover:bg-slate-100 font-bold flex items-center justify-center shadow-2xs cursor-pointer"
+                      >
+                        −
+                      </button>
+                      <span className="text-sm font-extrabold text-emerald-800">
+                        {qty} item
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => addItem(prod.id, 1)}
+                        aria-label={`Tambah ${prod.name}`}
+                        className="w-8 h-8 rounded-lg bg-emerald-600 text-white hover:bg-emerald-500 font-bold flex items-center justify-center shadow-2xs cursor-pointer"
+                      >
+                        +
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
-
-              {/* Action Buttons: WhatsApp & Shopee */}
-              <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
-                {/* Primary: WhatsApp for Graha Merjosari Asri */}
-                {prod.in_stock ? (
-                  <a
-                    href={`https://wa.me/${waNumber}?text=${encodeURIComponent(
-                      prod.wa_text ||
-                        `Halo Hydro Malang, saya ingin pesan *${prod.name}* (${formatRupiah(prod.price)}).`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`w-full py-2.5 px-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-xs ${
-                      prod.popular
-                        ? "bg-linear-to-r from-emerald-600 to-teal-500 text-white hover:from-emerald-500 hover:to-teal-400 shadow-emerald-500/20"
-                        : "bg-sky-600 hover:bg-sky-500 text-white shadow-sky-500/20"
-                    } hover:-translate-y-0.5 active:translate-y-0`}
-                  >
-                    <svg
-                      className="w-4 h-4 fill-current shrink-0"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                    </svg>
-                    <span>Pesan via WA (Graha Merjosari)</span>
-                  </a>
-                ) : (
-                  <div className="w-full py-2.5 px-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center bg-slate-100 text-slate-400 cursor-not-allowed">
-                    Stok Sedang Kosong
-                  </div>
-                )}
-
-                {/* Secondary: Shopee */}
-                <a
-                  href={shopeeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-2 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 bg-orange-50 hover:bg-orange-100 text-orange-700 border border-orange-200 transition-colors"
-                >
-                  <svg className="w-3.5 h-3.5 fill-current text-orange-600 shrink-0" viewBox="0 0 24 24">
-                    <path d="M19.78 7.37l-1.92-3.84C17.5 2.82 16.77 2.37 16 2.37H8c-.77 0-1.5.45-1.86 1.16L4.22 7.37c-.6.93-.34 2.16.59 2.76.3.2.66.3 1.02.3h.17l.8 9.57C6.88 20.89 7.6 21.63 8.5 21.63h7c.9 0 1.62-.74 1.7-1.63l.8-9.57h.17c.36 0 .72-.1 1.02-.3.93-.6 1.19-1.83.59-2.76z" />
-                  </svg>
-                  <span>Beli via Shopee</span>
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Quick order note */}
-        <div className="mt-12 text-center">
-          <p className="text-xs sm:text-sm text-slate-500 flex items-center justify-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>Customer Service: <strong className="text-slate-800">0895-7028-31600</strong> • Gratis Ongkir di Graha Merjosari Asri &amp; Tersedia di <strong className="text-orange-600">Shopee</strong> untuk Luar Area</span>
-          </p>
+            );
+          })}
         </div>
       </div>
     </section>
